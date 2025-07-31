@@ -17,7 +17,8 @@ export default function Home() {
       </a>
       <p className="text-lg text-gray-300 leading-relaxed mt-6">
         Feel free to explore my work and get in touch if you&apos;d like to
-        collaborate or just say hi!
+        collaborate or just say hi! And if you&apos;re interested in my resume,
+        you can download it
       </p>
     </main>
   );
