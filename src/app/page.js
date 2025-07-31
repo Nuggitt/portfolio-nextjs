@@ -15,6 +15,10 @@ export default function Home() {
       >
         See My Projects
       </a>
+      <p className="text-lg text-gray-300 leading-relaxed mt-6">
+        Feel free to explore my work and get in touch if you&apos;d like to
+        collaborate or just say hi!
+      </p>
     </main>
   );
 }
