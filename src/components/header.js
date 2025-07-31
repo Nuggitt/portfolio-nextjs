@@ -9,7 +9,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold hover:underline underline-offset-4"
         >
-          Philip's Portfolio
+          Philip&apos;s Portfolio
         </Link>
         <div className="flex items-center space-x-4">
           <Link href="/about" className="hover:underline underline-offset-4">

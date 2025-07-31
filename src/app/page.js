@@ -5,7 +5,7 @@ export default function Home() {
         Hi, I&apos;m Philip 👋
       </h1>
       <p className="text-lg text-gray-300 leading-relaxed mb-6">
-        I'm a newly graduated Computer Science AP student specializing in
+        I&apos;m a newly graduated Computer Science AP student specializing in
         fullstack development. I love building modern and responsive web apps
         using .NET, JavaScript, and Next.js.
       </p>
