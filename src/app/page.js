@@ -1,7 +1,9 @@
 export default function Home() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-6 text-center">Hi, I'm Philip 👋</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">
+        Hi, I&apos;m Philip 👋
+      </h1>
       <p className="text-lg text-gray-300 leading-relaxed mb-6">
         I'm a newly graduated Computer Science AP student specializing in
         fullstack development. I love building modern and responsive web apps
