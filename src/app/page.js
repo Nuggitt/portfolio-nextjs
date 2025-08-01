@@ -4,9 +4,9 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-6 text-center">
         Hi, I&apos;m Philip 👋
       </h1>
-      <p className="text-lg text-gray-300 leading-relaxed mb-6">
-        I&apos;m a newly graduated Computer Science AP student specializing in
-        fullstack development. I love building modern and responsive web apps
+      <p className="text-lg leading-relaxed mb-6">
+        I&apos;m a recently graduated Computer Science AP student specializing
+        in fullstack development. I love building modern and responsive web apps
         using .NET, JavaScript, and Next.js.
       </p>
       <a
@@ -15,7 +15,7 @@ export default function Home() {
       >
         See My Projects
       </a>
-      <p className="text-lg text-gray-300 leading-relaxed mt-6">
+      <p className="text-lg leading-relaxed mt-6">
         Feel free to explore my work and get in touch if you&apos;d like to
         collaborate or just say hi! And if you&apos;re interested in my resume,
         you can download it

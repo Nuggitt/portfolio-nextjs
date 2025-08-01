@@ -23,18 +23,15 @@ export default function ProjectsPage() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border rounded-xl p-6 shadow hover:shadow-lg transition bg-white dark:bg-gray-800 dark:text-white"
+            className="border rounded-xl p-6 shadow hover:shadow-lg transition bg-white/80 dark:bg-gray-800/60"
           >
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
+            <p className="text-lg leading-relaxed mb-6">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-3">
               {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="bg-gray-900 text-white text-sm px-2 py-1 rounded"
-                >
+                <span key={i} className="tag">
                   {tech}
                 </span>
               ))}

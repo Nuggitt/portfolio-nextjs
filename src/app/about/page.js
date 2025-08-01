@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-6 text-center">About Me</h1>
-      <p className="text-lg text-gray-300 leading-relaxed mb-6">
+      <p className="text-lg leading-relaxed mb-6">
         I&apos;m a recently graduated Computer Science AP student from Denmark.
         I specialize in fullstack development with .NET, JavaScript, and
         React/Next.js. I enjoy creating clean, user-friendly applications and
@@ -23,7 +23,7 @@ export default function AboutPage() {
             "Tailwind CSS",
             "Git",
           ].map((tech, i) => (
-            <li key={i} className="bg-gray-700 px-3 py-1 rounded">
+            <li key={i} className="tag">
               {tech}
             </li>
           ))}

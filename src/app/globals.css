@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  @apply bg-slate-100 text-gray-800 transition-colors;
+}
+
+html.dark {
+  @apply bg-gray-900 text-gray-200;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  @apply leading-relaxed;
+}
+
+.tag {
+  @apply px-3 py-1 rounded text-sm font-medium transition-colors;
+  @apply bg-slate-700 text-white dark:bg-gray-700 dark:text-white;
 }

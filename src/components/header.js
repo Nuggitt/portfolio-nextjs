@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useTheme } from "./themeProvider";
 
 export default function Header() {
+  const { darkMode, setDarkMode } = useTheme();
+
   return (
     <nav className="bg-gray-800 text-white px-6 py-4 sticky top-0 z-50 shadow">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
@@ -31,6 +34,12 @@ export default function Header() {
           >
             Download CV
           </a>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="ml-2 px-3 py-1 border rounded text-sm hover:bg-gray-700 dark:hover:bg-gray-300 dark:text-black"
+          >
+            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
         </div>
       </div>
     </nav>

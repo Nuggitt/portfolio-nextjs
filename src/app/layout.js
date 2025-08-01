@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/components/header";
+import ThemeProvider from "@/components/themeProvider";
 
 export const metadata = {
   title: "My Portfolio",
@@ -8,10 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-900 text-white">
-        <Header />
-        {children}
+    <html lang="en" className="dark">
+      <body>
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
