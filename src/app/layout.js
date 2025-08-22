@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/header";
 import ThemeProvider from "@/components/themeProvider";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "My Portfolio",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

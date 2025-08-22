@@ -15,7 +15,29 @@ body {
   @apply leading-relaxed;
 }
 
+footer {
+  @apply mt-16 border-t pt-8 pb-12 text-sm text-center text-gray-800 dark:text-gray-200 transition-colors;
+}
+
+footer div {
+  @apply flex justify-center gap-6 mb-4;
+}
+
+footer a {
+  @apply hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors;
+}
+
+footer p {
+  @apply text-xs;
+}
+
 .tag {
   @apply px-3 py-1 rounded text-sm font-medium transition-colors;
   @apply bg-slate-700 text-white dark:bg-gray-700 dark:text-white;
+}
+
+.cv-button {
+  @apply px-3 py-1 rounded border text-sm transition-colors;
+  @apply border-gray-700 bg-white text-gray-800 hover:bg-gray-100;
+  @apply dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700;
 }
