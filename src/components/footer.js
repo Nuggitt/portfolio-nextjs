@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
 
       <p>
-        Last updated: {currentDate} {currentMonth} {currentYear},
+        Last updated: {currentDate}-{currentMonth}-{currentYear}
       </p>
     </footer>
   );

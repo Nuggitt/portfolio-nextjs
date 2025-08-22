@@ -41,3 +41,80 @@ footer p {
   @apply border-gray-700 bg-white text-gray-800 hover:bg-gray-100;
   @apply dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700;
 }
+
+/* Projects Page Layout */
+.projects-page {
+  @apply max-w-6xl mx-auto px-4 py-16;
+}
+
+.projects-title {
+  @apply text-4xl font-bold mb-10 text-center;
+}
+
+.section-heading {
+  @apply text-2xl font-semibold mb-6;
+}
+
+/* Cards – Current Projects */
+.project-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.project-card {
+  @apply rounded-xl shadow bg-white dark:bg-gray-800 dark:text-white overflow-hidden;
+  @apply flex flex-col;
+}
+
+.project-image {
+  @apply w-full h-30 object-cover;
+}
+
+.project-content {
+  @apply p-4;
+  @apply flex-1;
+}
+
+.project-title {
+  @apply text-xl font-bold mb-2;
+}
+
+.project-description {
+  @apply text-gray-600 dark:text-gray-300 mb-4;
+}
+
+.project-tags {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+.project-links {
+  @apply flex gap-4;
+}
+
+.project-link {
+  @apply text-blue-600 dark:text-blue-400 underline text-sm;
+}
+
+.earlier-projects {
+  @apply mt-16;
+}
+
+/* Table – Earlier Projects */
+.project-table {
+  @apply w-full text-left border-collapse rounded-lg overflow-hidden shadow;
+}
+
+.project-table thead {
+  @apply bg-gray-200 dark:bg-gray-700;
+}
+
+.project-table th {
+  @apply px-4 py-3 text-sm font-semibold text-gray-800 dark:text-gray-200;
+}
+
+.project-table tbody tr {
+  @apply bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition;
+}
+
+.project-table td {
+  @apply px-4 py-3 text-sm text-gray-700 dark:text-gray-300;
+}
