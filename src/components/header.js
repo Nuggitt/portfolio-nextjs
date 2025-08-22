@@ -1,12 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "./themeProvider";
 
 export default function Header() {
   const { darkMode, setDarkMode } = useTheme();
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="bg-gray-800 text-white px-6 py-4 sticky top-0 z-50 shadow">
@@ -33,7 +47,7 @@ export default function Header() {
           </Link>
 
           {/* CV Dropdown */}
-          <div className="relative">
+          <div className="relative" ref={menuRef}>
             <button
               onClick={() => setShowMenu(!showMenu)}
               className="cv-button"
