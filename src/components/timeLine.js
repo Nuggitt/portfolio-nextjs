@@ -15,7 +15,7 @@ const experiences = [
     company: "School Project Heatwaves",
     title: "Scrum Master & Developer",
     start: "April 2024",
-    end: "June 2025",
+    end: "June 2024",
     year: "2024",
     description:
       "Led and contributed the Heatwaves project in academic settings. Gained experience in project management, teamwork, and full software development lifecycle.",
