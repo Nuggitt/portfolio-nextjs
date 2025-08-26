@@ -269,7 +269,7 @@ footer p {
 }
 
 .contact-page {
-  @apply min-h-screen flex items-center justify-center px-4 py-12 bg-slate-100 dark:bg-gray-900;
+  @apply flex justify-center px-4 py-12 md:py-20 bg-slate-100 dark:bg-gray-900;
 }
 
 .contact-container {

@@ -23,14 +23,32 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    setSubmitted(true);
+    setSubmitted(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        console.error("Fejl ved afsendelse");
+      }
+    } catch (err) {
+      console.error("Netværksfejl:", err);
+    }
   };
 
   return (
-    <div className="contact-page">
+    <div className="contact-page flex justify-center px-4 py-12 md:py-20">
       <div className="contact-container grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* === Sidebar / Contact Info === */}
         <div className="md:col-span-1 contact-sidebar">
