@@ -233,3 +233,115 @@ footer p {
 .timeline-col-right {
   grid-column: 3 / 4;
 }
+
+/* Contact Page */
+.contact-section {
+  @apply max-w-3xl mx-auto px-4 py-16;
+}
+
+.contact-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white;
+}
+
+.contact-description {
+  @apply text-center text-gray-600 dark:text-gray-300 mb-10;
+}
+
+.contact-info {
+  @apply mb-8 text-sm text-gray-700 dark:text-gray-300 space-y-2;
+}
+
+.contact-form {
+  @apply space-y-6;
+}
+
+.contact-input,
+.contact-textarea {
+  @apply w-full p-3 border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition;
+}
+
+.contact-button {
+  @apply bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition;
+}
+
+.contact-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.contact-page {
+  @apply min-h-screen flex items-center justify-center px-4 py-12 bg-slate-100 dark:bg-gray-900;
+}
+
+.contact-container {
+  @apply max-w-3xl w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md;
+}
+
+.contact-subtitle {
+  @apply text-center text-gray-600 dark:text-gray-300 mb-8;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply flex items-center gap-2 text-gray-800 dark:text-white font-medium mb-1;
+}
+
+.form-input,
+.form-textarea {
+  @apply w-full p-3 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-300;
+}
+
+.form-button {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded transition;
+}
+
+.icon {
+  @apply w-4 h-4;
+}
+
+.form-success {
+  @apply text-green-600 dark:text-green-400 text-sm mt-2;
+}
+
+.form-error {
+  @apply text-red-600 dark:text-red-400 text-sm mt-2;
+}
+
+.contact-sidebar {
+  @apply bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow text-sm text-gray-700 dark:text-gray-300;
+}
+
+.contact-info p {
+  @apply mb-3;
+}
+
+.contact-icons {
+  @apply flex flex-col gap-6;
+}
+
+.hex-icon {
+  @apply flex flex-col items-center text-center transition-transform hover:scale-105;
+}
+
+.hex {
+  @apply w-14 h-14 flex items-center justify-center;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background-color: #475569; /* slate-600 */
+  transition: background-color 0.3s ease;
+}
+
+.dark .hex {
+  background-color: #426ba4; /* slate-700 */
+}
+
+.hex .icon {
+  @apply w-6 h-6 text-white;
+}
+
+.hex-label {
+  @apply text-sm mt-2 text-gray-800 dark:text-gray-200;
+  word-break: break-word;
+  max-width: 200px;
+}
