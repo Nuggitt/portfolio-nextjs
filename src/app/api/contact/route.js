@@ -15,6 +15,7 @@ export async function POST(req) {
       text: `
         Navn: ${body.name}
         Email: ${body.email}
+        Telefon: ${body.phone}
         Besked: ${body.message}
       `,
     });

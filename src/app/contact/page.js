@@ -15,8 +15,10 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -38,7 +40,7 @@ export default function ContactPage() {
 
       if (res.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" }); // <-- nulstil telefon også
       } else {
         console.error("Fejl ved afsendelse");
       }
@@ -160,6 +162,21 @@ export default function ContactPage() {
                 onChange={handleChange}
                 className="form-input"
                 required
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                <Phone className="icon" />
+                Phone
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                className="form-input"
               />
             </div>
 
