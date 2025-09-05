@@ -42,6 +42,12 @@ export default function Header() {
           <Link href="/projects" className="hover:underline underline-offset-4">
             Projects
           </Link>
+          <Link
+            href="/education"
+            className="hover:underline underline-offset-4"
+          >
+            Education
+          </Link>
           <Link href="/contact" className="hover:underline underline-offset-4">
             Contact
           </Link>
