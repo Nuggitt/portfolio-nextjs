@@ -256,13 +256,13 @@ export default function AboutPage() {
                   <span
                     className={
                       idx === currentStep
-                        ? "text-white font-medium"
+                        ? "text-gray-900 dark:text-white font-semibold" // <— før: "text-white"
                         : "text-gray-700 dark:text-gray-300"
                     }
                   >
                     {label}
                     {idx === currentStep && (
-                      <span className="ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                      <span className="ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
                         Current
                       </span>
                     )}
