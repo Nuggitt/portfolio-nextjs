@@ -345,3 +345,112 @@ footer p {
   word-break: break-word;
   max-width: 200px;
 }
+
+/* Layout helpers for About */
+.about-page {
+  @apply max-w-4xl mx-auto px-4 py-16;
+}
+
+.about-title {
+  @apply text-4xl font-bold mb-6 text-center;
+}
+
+.about-lead {
+  @apply text-lg leading-relaxed mb-10 text-center;
+}
+
+.about-section {
+  @apply mt-6;
+}
+
+/* Grid for the two main cards */
+.about-grid {
+  @apply grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2;
+}
+
+/* Reusable card */
+.card {
+  @apply rounded-2xl border shadow
+         bg-white/70 dark:bg-gray-800/40
+         border-gray-200 dark:border-white/10
+         backdrop-blur-sm
+         p-6 md:p-8;
+}
+
+/* Sikrer ens spacing indeni cards */
+.card > *:last-child {
+  @apply mb-0;
+}
+
+/* Avatar gradient ring */
+.avatar-ring {
+  @apply p-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500;
+}
+
+/* Emoji bullet list */
+.emoji-list {
+  @apply space-y-4;
+}
+.emoji-list li {
+  @apply flex items-start gap-3 text-gray-900 dark:text-gray-100;
+}
+.emoji-list li > span {
+  @apply text-lg leading-6;
+}
+.emoji-list li > p {
+  @apply leading-relaxed text-gray-700 dark:text-gray-300;
+}
+
+/* Buttons (reuse from earlier) */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90;
+}
+.btn-blue {
+  @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-blue-600 hover:bg-blue-700;
+}
+.btn-neutral {
+  @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-gray-700 hover:bg-gray-600;
+}
+.btn-gradient {
+  @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90;
+}
+
+/* Accent bar under sektionstitler */
+.title-accent {
+  @apply mx-auto mt-3 mb-6 h-1 w-24 rounded-full 
+         bg-gradient-to-r from-purple-500 to-blue-500;
+}
+
+.title-accent-left {
+  @apply mt-2 mb-6 h-1 w-20 rounded-full 
+         bg-gradient-to-r from-purple-500 to-blue-500;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* vi scroller én fuld kopi */
+}
+
+/* Wrapper: skjul overflow */
+.scroll-container {
+  @apply relative overflow-hidden;
+}
+
+/* Selve sporet med to kopier af badges i træk */
+.scroll-track {
+  display: flex;
+  gap: 0.75rem; /* afstand mellem badges */
+  width: max-content; /* så indholdets bredde bestemmer */
+  white-space: nowrap;
+  padding: 0.25rem 0.5rem; /* lidt top/bund + sidepadding */
+  animation: scroll-x 22s linear infinite;
+}
+
+/* Pause på hover (fordi parent har .group) */
+.group:hover .scroll-track {
+  animation-play-state: paused;
+}

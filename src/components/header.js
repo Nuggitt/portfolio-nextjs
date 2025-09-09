@@ -16,9 +16,10 @@ export default function Header() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // Brug "click" i stedet for "mousedown"
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -58,18 +59,23 @@ export default function Header() {
               onClick={() => setShowMenu(!showMenu)}
               className="cv-button"
             >
-              View CV
+              View Resume
             </button>
 
             {showMenu && (
-              <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-md z-50">
+              <div
+                className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-md z-50"
+                // Stop klik fra at boble ud til document listener
+                onMouseDown={(e) => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <a
                   href="https://jofibo.com/da/s/m3WVtromskGUVgjdtTbD0w"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                  🇩🇰 Dansk CV
+                  🇩🇰 Danish
                 </a>
                 <a
                   href="https://jofibo.com/da/s/pYWlKfDU1E2jJCNZUlGq6w"
@@ -77,7 +83,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                  🇬🇧 English CV
+                  🇬🇧 English
                 </a>
               </div>
             )}

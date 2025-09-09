@@ -43,10 +43,12 @@ export default function ProjectsPage() {
   return (
     <main className="projects-page">
       <h1 className="projects-title">Projects</h1>
+      <div className="title-accent" />
 
       {/* Current Projects */}
       <section className="current-projects">
         <h2 className="section-heading">Current Projects</h2>
+        <div className="title-accent-left" />
         <div className="project-grid">
           {currentProjects.map((project, index) => (
             <div key={index} className="project-card">
@@ -94,6 +96,7 @@ export default function ProjectsPage() {
       {/* Earlier Projects */}
       <section className="earlier-projects">
         <h2 className="section-heading">Earlier Projects</h2>
+        <div className="title-accent-left" />
         <div className="overflow-x-auto">
           <table className="project-table">
             <thead>
