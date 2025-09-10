@@ -41,8 +41,8 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="projects-page">
-      <h1 className="projects-title">Projects</h1>
+    <main className="page-main">
+      <h1 className="page-title">Projects</h1>
       <div className="title-accent" />
 
       {/* Current Projects */}

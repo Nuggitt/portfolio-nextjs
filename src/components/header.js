@@ -38,10 +38,7 @@ export default function Header() {
             About
           </Link>
           <Link href="/work" className="hover:underline underline-offset-4">
-            Experience
-          </Link>
-          <Link href="/projects" className="hover:underline underline-offset-4">
-            Projects
+            Work Experience
           </Link>
           <Link
             href="/education"
@@ -49,6 +46,13 @@ export default function Header() {
           >
             Education
           </Link>
+          <Link href="/skills" className="hover:underline underline-offset-4">
+            Skills
+          </Link>
+          <Link href="/projects" className="hover:underline underline-offset-4">
+            Projects
+          </Link>
+
           <Link href="/contact" className="hover:underline underline-offset-4">
             Contact
           </Link>

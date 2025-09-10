@@ -417,7 +417,7 @@ footer p {
 
 /* Accent bar under sektionstitler */
 .title-accent {
-  @apply mx-auto mt-3 mb-6 h-1 w-24 rounded-full 
+  @apply mx-auto mt-2 mb-6 h-1 w-24 rounded-full 
          bg-gradient-to-r from-purple-500 to-blue-500;
 }
 
@@ -450,7 +450,42 @@ footer p {
   animation: scroll-x 22s linear infinite;
 }
 
+/* Badges (skills, certs, etc.) */
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded text-sm font-medium truncate;
+  @apply bg-gray-100 text-gray-800 border border-gray-300; /* Light mode */
+  @apply dark:bg-gray-700 dark:text-white dark:border-gray-600; /* Dark mode */
+}
+
+.badge:hover {
+  @apply bg-gray-200 dark:bg-gray-600;
+}
+
+/* Skills chips */
+.chip {
+  @apply h-12 px-4 rounded-xl
+         border bg-white text-gray-900 shadow-sm
+         border-gray-300 hover:shadow-md hover:bg-gray-50
+         transition;
+
+  /* Dark mode */
+  @apply dark:bg-gray-800/60 dark:text-white
+         dark:border-gray-700 dark:shadow-none
+         dark:hover:bg-gray-800;
+}
+
 /* Pause på hover (fordi parent har .group) */
 .group:hover .scroll-track {
   animation-play-state: paused;
 }
+
+/* Ens container for sider */
+.page-main {
+  @apply max-w-4xl mx-auto px-4 py-16;
+}
+
+/* Ens h1-stil på tværs af sider */
+.page-title {
+  @apply text-4xl font-bold mb-6 text-center;
+}
+/* (du har også .projects-title med samme værdier – det er fint) */

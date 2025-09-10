@@ -41,9 +41,9 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main className="about-page">
+    <main className="page-main">
       {/* --- TITLE --- */}
-      <h1 className="about-title">About Me</h1>
+      <h1 className="page-title">About Me</h1>
       <div className="title-accent" />
 
       {/* --- ABOUT: avatar + bio bullets (2 cards) --- */}
@@ -180,7 +180,7 @@ export default function AboutPage() {
 
       {/* --- VALUES --- */}
       <section className="about-section mt-12">
-        <h1 className="about-title">Values</h1>
+        <h1 className="page-title">Values</h1>
         <div className="title-accent" />
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -201,7 +201,7 @@ export default function AboutPage() {
 
       {/* --- CURRENTLY DEVELOPING (2 CARDS) --- */}
       <section className="about-section mt-12">
-        <h1 className="about-title">Currently Developing</h1>
+        <h1 className="page-title">Currently Developing</h1>
         <div className="title-accent" />
 
         <div className="about-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
@@ -276,7 +276,7 @@ export default function AboutPage() {
 
       {/* --- TECH STACK (auto-scroll) --- */}
       <section className="about-section mt-12">
-        <h1 className="about-title">Tech Stack</h1>
+        <h1 className="page-title">Tech Stack</h1>
         <div className="title-accent" />
         <motion.div
           initial={{ opacity: 0, y: 8 }}
