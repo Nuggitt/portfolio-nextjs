@@ -138,10 +138,12 @@ footer p {
 .timeline-item {
   @apply relative;
 }
-/* Kun én definition af timeline-dot */
+
+/* dot til venstre-varianten */
 .timeline-dot {
   @apply w-6 h-6 rounded-full bg-blue-500 shadow-lg;
 }
+
 .timeline-content {
   @apply bg-white dark:bg-gray-800 rounded-lg shadow p-4 transition-transform transition-shadow duration-300;
 }
@@ -154,46 +156,61 @@ footer p {
 .timeline-content p {
   @apply text-sm text-gray-600 dark:text-gray-300;
 }
+
 .timeline-entry {
   @apply relative pl-8;
 }
-
 .timeline-entry::before {
   content: "";
   @apply absolute -left-3 top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-white dark:ring-gray-900 shadow;
 }
-
 .timeline-date {
   @apply absolute -left-24 top-0 text-xs text-gray-600 dark:text-gray-400;
 }
 
-/* Centered timeline variant */
+/* ===== Centered timeline variant (mobil-tilpasset) ===== */
 .timeline-center {
   @apply relative p-6 sm:p-10;
+  overflow-x: clip; /* skjul evt. offscreen årstal-layers */
 }
+
 .timeline-center-line {
   @apply hidden sm:block pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border border-gray-400 dark:border-gray-600;
 }
+
+/* MOBIL (xs): én kolonne, stramt layout */
 .timeline-row {
-  @apply relative mb-12 grid items-start gap-6;
+  position: relative;
+  display: grid;
+  align-items: start;
   grid-template-columns: 1fr;
-}
-.timeline-center-col {
-  grid-column: 1;
-}
-@media (min-width: 640px) {
-  .timeline-center-col {
-    grid-column: 2 / 3;
-  }
+  gap: 0; /* fjern ekstra luft mellem kolonner */
+  margin-bottom: 2rem; /* ~ mb-8 */
 }
 
-.timeline-col-left {
-  grid-column: 1;
+/* Skjul centerkolonnen helt på mobil */
+.timeline-center-col {
+  display: none;
 }
+
+/* Kolonner på mobil = samme kolonne */
+.timeline-col-left,
 .timeline-col-right {
   grid-column: 1;
 }
+
+/* TABLET/DESKTOP (sm+): klassisk center-timeline */
 @media (min-width: 640px) {
+  .timeline-row {
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 1.5rem; /* = gap-6 */
+    margin-bottom: 3rem; /* = mb-12 */
+  }
+  .timeline-center-col {
+    display: block;
+    grid-column: 2 / 3;
+    min-height: 2.5rem; /* buffer til dot/år */
+  }
   .timeline-col-left {
     grid-column: 1 / 2;
   }
@@ -202,17 +219,13 @@ footer p {
   }
 }
 
-@media (min-width: 640px) {
-  .timeline-row {
-    grid-template-columns: 1fr 2px 1fr;
-    @apply mb-16;
-  }
-}
+/* Dot og årstal: skjult på mobil, vist fra sm+ */
 .timeline-dot--center {
   @apply hidden sm:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
 }
+
 .timeline-year {
-  @apply absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
+  @apply hidden sm:block absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
 }
 .timeline-year:hover {
   @apply text-blue-600 dark:text-blue-400;
@@ -222,12 +235,6 @@ footer p {
 }
 .timeline-year--left {
   @apply right-1/2 mr-4 text-right;
-}
-.timeline-col-left {
-  grid-column: 1 / 2;
-}
-.timeline-col-right {
-  grid-column: 3 / 4;
 }
 
 /* ===== Contact ===== */

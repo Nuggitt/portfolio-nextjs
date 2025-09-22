@@ -108,7 +108,7 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-2">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="px-3 py-1 border rounded text-sm hover:bg-gray-700 dark:hover:bg-gray-300 dark:text-black"
+            className="px-3 py-1 border rounded text-sm border-white/30 hover:bg-white/10 dark:hover:bg-gray-300 dark:text-black"
             aria-pressed={darkMode}
           >
             {darkMode ? "☀️" : "🌙"}
@@ -118,7 +118,7 @@ export default function Header() {
             aria-controls="mobile-menu"
             aria-expanded={openMain}
             aria-label="Toggle menu"
-            className="inline-flex items-center justify-center rounded-md p-2 border border-white/20 hover:bg-white/10 focus:outline-none"
+            className="inline-flex items-center justify-center rounded-md p-2 border border-white/30 hover:bg-white/10 focus:outline-none"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" />
@@ -131,61 +131,65 @@ export default function Header() {
       {openMain && (
         <div
           id="mobile-menu"
-          className="md:hidden mt-3 max-w-5xl mx-auto rounded-2xl border border-white/10 bg-gray-800 p-4 shadow-lg"
+          className="md:hidden mt-3 max-w-5xl mx-auto rounded-2xl border 
+                     border-gray-200 dark:border-white/10 
+                     bg-white dark:bg-gray-800 
+                     p-4 shadow-lg 
+                     text-gray-800 dark:text-white"
         >
           <div className="flex flex-col gap-2">
             <Link
               href="/about"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               About
             </Link>
             <Link
               href="/work"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               Work
             </Link>
             <Link
               href="/education"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               Education
             </Link>
             <Link
               href="/skills"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               Skills
             </Link>
             <Link
               href="/projects"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               Projects
             </Link>
             <Link
               href="/contact"
-              className="py-1 hover:underline underline-offset-4"
+              className="py-1 hover:underline underline-offset-4 hover:bg-gray-100 dark:hover:bg-white/10 rounded"
               onClick={() => setOpenMain(false)}
             >
               Contact
             </Link>
 
             {/* CV-links på mobil som simpel liste */}
-            <div className="mt-2 pt-2 border-t border-white/10">
+            <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
               <div className="text-sm font-medium mb-1">View Resume</div>
-              <div className="flex flex-col rounded-lg overflow-hidden border border-white/10">
+              <div className="flex flex-col rounded-lg overflow-hidden border border-gray-200 dark:border-white/10">
                 <a
                   href="https://jofibo.com/da/s/m3WVtromskGUVgjdtTbD0w"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2 text-sm hover:bg-white/10"
+                  className="px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-white/10"
                 >
                   🇩🇰 Danish
                 </a>
@@ -193,7 +197,7 @@ export default function Header() {
                   href="https://jofibo.com/da/s/pYWlKfDU1E2jJCNZUlGq6w"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2 text-sm hover:bg-white/10"
+                  className="px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-white/10"
                 >
                   🇬🇧 English
                 </a>

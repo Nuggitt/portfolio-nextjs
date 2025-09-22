@@ -109,52 +109,48 @@ function Card({
   );
 }
 
-export default function Timeline() {
+export default function EducationTimeline() {
   return (
-    <div className="timeline-center">
-      {/* Lodret centerlinje */}
+    <section className="timeline-center">
       <div className="timeline-center-line" />
-
       {educations.map((exp, index) => {
         const isLeft = index % 2 === 0;
-
         return (
           <div key={index} className="timeline-row">
-            {/* Venstre kort */}
-            <div className={`${isLeft ? "block" : "hidden"} timeline-col-left`}>
-              <Reveal direction="left">
-                <Card {...exp} align="left" />
-              </Reveal>
+            {/* Venstre kolonne */}
+            <div className="timeline-col-left">
+              {isLeft ? (
+                <Reveal direction="left">
+                  <Card {...exp} align="left" />
+                </Reveal>
+              ) : null}
             </div>
 
             {/* Midterkolonne (dot + år) */}
-            <div className="timeline-center-col">
-              {/* Dot + år med lille pop/fade */}
-              <Reveal delay={100}>
-                <div className="relative">
-                  <div className="timeline-dot timeline-dot--center motion-safe:transition motion-safe:duration-700 motion-safe:ease-out motion-safe:scale-100 opacity-100" />
-                  <div
-                    className={`timeline-year font-mono tracking-wide text-gray-600 dark:text-gray-300 ${
-                      isLeft ? "timeline-year--right" : "timeline-year--left"
-                    }`}
-                  >
-                    {exp.year}
-                  </div>
-                </div>
-              </Reveal>
+            <div className="timeline-center-col relative">
+              <span className="timeline-dot timeline-dot--center" />
+              <span
+                className={
+                  isLeft
+                    ? "timeline-year timeline-year--right"
+                    : "timeline-year timeline-year--left"
+                }
+              >
+                {exp.year}
+              </span>
             </div>
 
-            {/* Højre kort */}
-            <div
-              className={`${isLeft ? "hidden" : "block"} timeline-col-right`}
-            >
-              <Reveal direction="right">
-                <Card {...exp} align="right" />
-              </Reveal>
+            {/* Højre kolonne */}
+            <div className="timeline-col-right">
+              {!isLeft ? (
+                <Reveal direction="right">
+                  <Card {...exp} align="right" />
+                </Reveal>
+              ) : null}
             </div>
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }
