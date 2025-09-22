@@ -38,7 +38,7 @@ export default function Header() {
             About
           </Link>
           <Link href="/work" className="hover:underline underline-offset-4">
-            Work Experience
+            Work
           </Link>
           <Link
             href="/education"
