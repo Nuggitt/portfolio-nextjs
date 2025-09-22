@@ -10,12 +10,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-dvh bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 antialiased">
         <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
+          <div className="min-h-dvh flex flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

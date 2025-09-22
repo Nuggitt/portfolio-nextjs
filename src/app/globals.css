@@ -14,11 +14,12 @@ body {
   @apply leading-relaxed;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (mobil først) ===== */
 footer {
   @apply mt-16 border-t pt-8 pb-12 text-sm text-center text-gray-800 dark:text-gray-200 transition-colors;
 }
-footer div {
+/* Kun link-rækken */
+footer .link-row {
   @apply flex justify-center gap-6 mb-4;
 }
 footer a {
@@ -45,13 +46,13 @@ footer p {
   @apply bg-gray-200 dark:bg-gray-600;
 }
 .chip {
-  @apply h-12 px-4 rounded-xl border bg-white text-gray-900 shadow-sm border-gray-300 hover:shadow-md hover:bg-gray-50 transition;
-  @apply dark:bg-gray-800/60 dark:text-white dark:border-gray-700 dark:shadow-none dark:hover:bg-gray-800;
+  @apply h-12 px-4 rounded-xl border bg-white text-gray-900 shadow-sm border-gray-300 hover:shadow-md hover:bg-gray-50 transition
+         dark:bg-gray-800/60 dark:text-white dark:border-gray-700 dark:shadow-none dark:hover:bg-gray-800;
 }
 
 /* ===== Page containers / headings ===== */
 .page-main {
-  @apply max-w-4xl mx-auto px-4 py-16;
+  @apply max-w-4xl mx-auto px-4 py-12 sm:py-16;
 }
 .page-title {
   @apply text-4xl font-bold mb-6 text-center;
@@ -77,13 +78,14 @@ footer p {
 
 /* ===== Projects ===== */
 .projects-page {
-  @apply max-w-6xl mx-auto px-4 py-16;
+  @apply max-w-6xl mx-auto px-4 py-12 sm:py-16;
 }
 .projects-title {
   @apply text-4xl font-bold mb-10 text-center;
 }
 .project-grid {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+  /* før: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */
+  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
 }
 .project-card {
   @apply rounded-xl shadow bg-white dark:bg-gray-800 dark:text-white overflow-hidden flex flex-col;
@@ -131,7 +133,7 @@ footer p {
 
 /* ===== Timeline (shared) ===== */
 .timeline {
-  @apply border-l-2 border-gray-300 dark:border-gray-600 ml-2 pl-6 space-y-8;
+  @apply relative border-l-2 border-gray-300 dark:border-gray-600 ml-4 pl-6 space-y-8;
 }
 .timeline-item {
   @apply relative;
@@ -153,29 +155,61 @@ footer p {
   @apply text-sm text-gray-600 dark:text-gray-300;
 }
 .timeline-entry {
-  @apply relative pl-10;
+  @apply relative pl-8;
 }
+
+.timeline-entry::before {
+  content: "";
+  @apply absolute -left-3 top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-white dark:ring-gray-900 shadow;
+}
+
 .timeline-date {
-  @apply absolute left-0 -top-1 text-xs text-gray-600 dark:text-gray-400;
+  @apply absolute -left-24 top-0 text-xs text-gray-600 dark:text-gray-400;
 }
 
 /* Centered timeline variant */
 .timeline-center {
-  @apply relative p-10;
+  @apply relative p-6 sm:p-10;
 }
 .timeline-center-line {
-  @apply pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border border-gray-400 dark:border-gray-600;
+  @apply hidden sm:block pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border border-gray-400 dark:border-gray-600;
 }
 .timeline-row {
-  @apply relative mb-16 grid items-center gap-8;
-  grid-template-columns: 1fr 2px 1fr;
+  @apply relative mb-12 grid items-start gap-6;
+  grid-template-columns: 1fr;
 }
 .timeline-center-col {
-  @apply relative;
-  grid-column: 2 / 3;
+  grid-column: 1;
+}
+@media (min-width: 640px) {
+  .timeline-center-col {
+    grid-column: 2 / 3;
+  }
+}
+
+.timeline-col-left {
+  grid-column: 1;
+}
+.timeline-col-right {
+  grid-column: 1;
+}
+@media (min-width: 640px) {
+  .timeline-col-left {
+    grid-column: 1 / 2;
+  }
+  .timeline-col-right {
+    grid-column: 3 / 4;
+  }
+}
+
+@media (min-width: 640px) {
+  .timeline-row {
+    grid-template-columns: 1fr 2px 1fr;
+    @apply mb-16;
+  }
 }
 .timeline-dot--center {
-  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
+  @apply hidden sm:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
 }
 .timeline-year {
   @apply absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
@@ -198,10 +232,10 @@ footer p {
 
 /* ===== Contact ===== */
 .contact-section {
-  @apply max-w-3xl mx-auto px-4 py-16;
+  @apply max-w-3xl mx-auto px-4 py-12 sm:py-16;
 }
 .contact-title {
-  @apply text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white;
+  @apply text-3xl sm:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white;
 }
 .contact-description {
   @apply text-center text-gray-600 dark:text-gray-300 mb-10;
@@ -377,6 +411,18 @@ footer p {
 .auto-grid-160 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem; /* 5 */
+}
+
+@media (min-width: 640px) {
+  .auto-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .auto-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Chip intern struktur */
@@ -406,8 +452,8 @@ footer p {
 }
 
 .cert-logo {
-  @apply relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden
-         bg-gray-100 dark:bg-gray-700;
+  /* før: w-40 h-40 */
+  @apply relative w-28 h-28 sm:w-40 sm:h-40 shrink-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-700;
 }
 /* Brug ren CSS her – @apply kan ikke sætte !important */
 .img-contain {
