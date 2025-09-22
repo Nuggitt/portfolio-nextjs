@@ -2,392 +2,306 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ===== Base ===== */
 html {
   @apply bg-slate-100 text-gray-800 transition-colors;
 }
-
 html.dark {
   @apply bg-gray-900 text-gray-200;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   @apply leading-relaxed;
 }
 
+/* ===== Footer ===== */
 footer {
   @apply mt-16 border-t pt-8 pb-12 text-sm text-center text-gray-800 dark:text-gray-200 transition-colors;
 }
-
 footer div {
   @apply flex justify-center gap-6 mb-4;
 }
-
 footer a {
   @apply hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors;
 }
-
 footer p {
   @apply text-xs;
 }
 
+/* ===== Reusable badges/buttons ===== */
 .tag {
-  @apply px-3 py-1 rounded text-sm font-medium transition-colors;
-  @apply bg-slate-700 text-white dark:bg-gray-700 dark:text-white;
+  @apply px-3 py-1 rounded text-sm font-medium transition-colors bg-slate-700 text-white dark:bg-gray-700 dark:text-white;
 }
-
 .cv-button {
-  @apply px-3 py-1 rounded border text-sm transition-colors;
-  @apply border-gray-700 bg-white text-gray-800 hover:bg-gray-100;
+  @apply px-3 py-1 rounded border text-sm transition-colors border-gray-700 bg-white text-gray-800 hover:bg-gray-100;
   @apply dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700;
 }
-
-/* Projects Page Layout */
-.projects-page {
-  @apply max-w-6xl mx-auto px-4 py-16;
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded text-sm font-medium truncate;
+  @apply bg-gray-100 text-gray-800 border border-gray-300;
+  @apply dark:bg-gray-700 dark:text-white dark:border-gray-600;
+}
+.badge:hover {
+  @apply bg-gray-200 dark:bg-gray-600;
+}
+.chip {
+  @apply h-12 px-4 rounded-xl border bg-white text-gray-900 shadow-sm border-gray-300 hover:shadow-md hover:bg-gray-50 transition;
+  @apply dark:bg-gray-800/60 dark:text-white dark:border-gray-700 dark:shadow-none dark:hover:bg-gray-800;
 }
 
-.projects-title {
-  @apply text-4xl font-bold mb-10 text-center;
+/* ===== Page containers / headings ===== */
+.page-main {
+  @apply max-w-4xl mx-auto px-4 py-16;
 }
-
+.page-title {
+  @apply text-4xl font-bold mb-6 text-center;
+}
 .section-heading {
   @apply text-2xl font-semibold mb-6;
 }
 
-/* Cards – Current Projects */
+.title-accent {
+  @apply mx-auto mt-2 mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-purple-500 to-blue-500;
+}
+.title-accent-left {
+  @apply mt-2 mb-6 h-1 w-20 rounded-full bg-gradient-to-r from-purple-500 to-blue-500;
+}
+
+/* ===== Cards ===== */
+.card {
+  @apply rounded-2xl border shadow bg-white/70 dark:bg-gray-800/40 border-gray-200 dark:border-white/10 backdrop-blur-sm p-6 md:p-8;
+}
+.card > *:last-child {
+  @apply mb-0;
+}
+
+/* ===== Projects ===== */
+.projects-page {
+  @apply max-w-6xl mx-auto px-4 py-16;
+}
+.projects-title {
+  @apply text-4xl font-bold mb-10 text-center;
+}
 .project-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
 }
-
 .project-card {
-  @apply rounded-xl shadow bg-white dark:bg-gray-800 dark:text-white overflow-hidden;
-  @apply flex flex-col;
+  @apply rounded-xl shadow bg-white dark:bg-gray-800 dark:text-white overflow-hidden flex flex-col;
 }
-
 .project-image {
-  @apply w-full h-30 object-cover;
-}
-
+  @apply w-full h-40 object-cover;
+} /* h-30 → h-40 */
 .project-content {
-  @apply p-4;
-  @apply flex-1;
+  @apply p-4 flex-1;
 }
-
 .project-title {
   @apply text-xl font-bold mb-2;
 }
-
 .project-description {
   @apply text-gray-600 dark:text-gray-300 mb-4;
 }
-
 .project-tags {
   @apply flex flex-wrap gap-2 mb-4;
 }
-
 .project-links {
   @apply flex gap-4;
 }
-
 .project-link {
   @apply text-blue-600 dark:text-blue-400 underline text-sm;
 }
-
 .earlier-projects {
   @apply mt-16;
 }
 
-/* Table – Earlier Projects */
 .project-table {
   @apply w-full text-left border-collapse rounded-lg overflow-hidden shadow;
 }
-
 .project-table thead {
   @apply bg-gray-200 dark:bg-gray-700;
 }
-
 .project-table th {
   @apply px-4 py-3 text-sm font-semibold text-gray-800 dark:text-gray-200;
 }
-
 .project-table tbody tr {
   @apply bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition;
 }
-
 .project-table td {
   @apply px-4 py-3 text-sm text-gray-700 dark:text-gray-300;
 }
 
-/* Timeline */
+/* ===== Timeline (shared) ===== */
 .timeline {
   @apply border-l-2 border-gray-300 dark:border-gray-600 ml-2 pl-6 space-y-8;
 }
-
 .timeline-item {
   @apply relative;
 }
-
+/* Kun én definition af timeline-dot */
 .timeline-dot {
-  @apply w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full absolute -left-[7px] top-1;
+  @apply w-6 h-6 rounded-full bg-blue-500 shadow-lg;
 }
-
 .timeline-content {
   @apply bg-white dark:bg-gray-800 rounded-lg shadow p-4 transition-transform transition-shadow duration-300;
 }
-
 .timeline-content:hover {
   @apply -translate-y-1 shadow-xl;
 }
-
 .timeline-content h3 {
   @apply text-lg font-semibold;
 }
-
 .timeline-content p {
   @apply text-sm text-gray-600 dark:text-gray-300;
 }
-
 .timeline-entry {
   @apply relative pl-10;
 }
-
 .timeline-date {
   @apply absolute left-0 -top-1 text-xs text-gray-600 dark:text-gray-400;
 }
 
-/* Ekstra, hvis ønsket */
-.timeline-line {
-  @apply border-l-4 border-gray-400 dark:border-gray-600;
-}
-
-.timeline-dot {
-  @apply w-6 h-6 rounded-full bg-blue-500 shadow-lg;
-}
-
-.timeline-dot--center {
-  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
-         w-4 h-4 rounded-full bg-blue-500 shadow-lg transition-transform transition-colors duration-300;
-}
-
-.timeline-dot--center:hover {
-  @apply scale-110 bg-blue-600 dark:bg-blue-400;
-}
-
-/* === Centered Timeline Variant (passer til eksisterende tema) === */
-
+/* Centered timeline variant */
 .timeline-center {
   @apply relative p-10;
 }
-
 .timeline-center-line {
   @apply pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border border-gray-400 dark:border-gray-600;
 }
-
-/* Hver række er 3 kolonner: venstre | 2px center | højre */
 .timeline-row {
   @apply relative mb-16 grid items-center gap-8;
   grid-template-columns: 1fr 2px 1fr;
 }
-
-/* Midterkolonne til dot + år */
-.timeline-center-col {
-  @apply relative;
-}
-
-/* Centeret dot (uafhængig af den venstre-justerede .timeline-dot) */
-.timeline-dot--center {
-  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
-}
-
-/* Årstal – tema-aware farver og ens afstand på begge sider af dotten */
-.timeline-year {
-  @apply absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide 
-         text-gray-600 dark:text-gray-300 transition-colors duration-300;
-}
-
-.timeline-year:hover {
-  @apply text-blue-600 dark:text-blue-400;
-}
-
-/* Årstal højre for dotten (når kortet er til venstre) */
-.timeline-year--right {
-  @apply left-1/2 ml-4 text-left;
-}
-
-/* Årstal venstre for dotten (når kortet er til højre) */
-.timeline-year--left {
-  @apply right-1/2 mr-4 text-right;
-}
-
-/* Kolonne-låsning for centered timeline */
-.timeline-col-left {
-  grid-column: 1 / 2;
-}
-
 .timeline-center-col {
   @apply relative;
   grid-column: 2 / 3;
 }
-
+.timeline-dot--center {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
+}
+.timeline-year {
+  @apply absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
+}
+.timeline-year:hover {
+  @apply text-blue-600 dark:text-blue-400;
+}
+.timeline-year--right {
+  @apply left-1/2 ml-4 text-left;
+}
+.timeline-year--left {
+  @apply right-1/2 mr-4 text-right;
+}
+.timeline-col-left {
+  grid-column: 1 / 2;
+}
 .timeline-col-right {
   grid-column: 3 / 4;
 }
 
-/* Contact Page */
+/* ===== Contact ===== */
 .contact-section {
   @apply max-w-3xl mx-auto px-4 py-16;
 }
-
 .contact-title {
   @apply text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white;
 }
-
 .contact-description {
   @apply text-center text-gray-600 dark:text-gray-300 mb-10;
 }
-
 .contact-info {
   @apply mb-8 text-sm text-gray-700 dark:text-gray-300 space-y-2;
 }
-
 .contact-form {
   @apply space-y-6;
 }
-
 .contact-input,
 .contact-textarea {
   @apply w-full p-3 border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition;
 }
-
 .contact-button {
   @apply bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition;
 }
-
 .contact-button:disabled {
   @apply opacity-50 cursor-not-allowed;
 }
-
 .contact-page {
   @apply flex justify-center px-4 py-12 md:py-20 bg-slate-100 dark:bg-gray-900;
 }
-
 .contact-container {
   @apply max-w-3xl w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md;
 }
-
 .contact-subtitle {
   @apply text-center text-gray-600 dark:text-gray-300 mb-8;
 }
-
 .form-group {
   @apply space-y-2;
 }
-
 .form-label {
   @apply flex items-center gap-2 text-gray-800 dark:text-white font-medium mb-1;
 }
-
 .form-input,
 .form-textarea {
-  @apply w-full p-3 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-300;
+  @apply w-full p-3 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder-gray-300;
 }
-
 .form-button {
   @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded transition;
 }
-
 .icon {
   @apply w-4 h-4;
 }
-
 .form-success {
   @apply text-green-600 dark:text-green-400 text-sm mt-2;
 }
-
 .form-error {
   @apply text-red-600 dark:text-red-400 text-sm mt-2;
 }
-
 .contact-sidebar {
   @apply bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow text-sm text-gray-700 dark:text-gray-300;
 }
-
 .contact-info p {
   @apply mb-3;
 }
-
 .contact-icons {
   @apply flex flex-col gap-6;
 }
-
 .hex-icon {
   @apply flex flex-col items-center text-center transition-transform hover:scale-105;
 }
-
 .hex {
   @apply w-14 h-14 flex items-center justify-center;
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  background-color: #475569; /* slate-600 */
+  background-color: #475569;
   transition: background-color 0.3s ease;
 }
-
 .dark .hex {
-  background-color: #426ba4; /* slate-700 */
+  background-color: #426ba4;
 }
-
 .hex .icon {
   @apply w-6 h-6 text-white;
 }
-
 .hex-label {
   @apply text-sm mt-2 text-gray-800 dark:text-gray-200;
   word-break: break-word;
   max-width: 200px;
 }
 
-/* Layout helpers for About */
+/* ===== About ===== */
 .about-page {
   @apply max-w-4xl mx-auto px-4 py-16;
 }
-
 .about-title {
   @apply text-4xl font-bold mb-6 text-center;
 }
-
 .about-lead {
   @apply text-lg leading-relaxed mb-10 text-center;
 }
-
 .about-section {
   @apply mt-6;
 }
-
-/* Grid for the two main cards */
 .about-grid {
   @apply grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2;
 }
-
-/* Reusable card */
-.card {
-  @apply rounded-2xl border shadow
-         bg-white/70 dark:bg-gray-800/40
-         border-gray-200 dark:border-white/10
-         backdrop-blur-sm
-         p-6 md:p-8;
-}
-
-/* Sikrer ens spacing indeni cards */
-.card > *:last-child {
-  @apply mb-0;
-}
-
-/* Avatar gradient ring */
 .avatar-ring {
   @apply p-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500;
 }
-
-/* Emoji bullet list */
 .emoji-list {
   @apply space-y-4;
 }
@@ -401,7 +315,7 @@ footer p {
   @apply leading-relaxed text-gray-700 dark:text-gray-300;
 }
 
-/* Buttons (reuse from earlier) */
+/* ===== Buttons ===== */
 .btn-primary {
   @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90;
 }
@@ -415,77 +329,230 @@ footer p {
   @apply px-4 py-2 rounded-lg text-white text-sm font-medium shadow transition bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90;
 }
 
-/* Accent bar under sektionstitler */
-.title-accent {
-  @apply mx-auto mt-2 mb-6 h-1 w-24 rounded-full 
-         bg-gradient-to-r from-purple-500 to-blue-500;
-}
-
-.title-accent-left {
-  @apply mt-2 mb-6 h-1 w-20 rounded-full 
-         bg-gradient-to-r from-purple-500 to-blue-500;
-}
-
+/* ===== Marquee (scroll) ===== */
 @keyframes scroll-x {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
-  } /* vi scroller én fuld kopi */
+  }
 }
-
-/* Wrapper: skjul overflow */
 .scroll-container {
   @apply relative overflow-hidden;
 }
-
-/* Selve sporet med to kopier af badges i træk */
 .scroll-track {
   display: flex;
-  gap: 0.75rem; /* afstand mellem badges */
-  width: max-content; /* så indholdets bredde bestemmer */
+  gap: 0.75rem;
+  width: max-content;
   white-space: nowrap;
-  padding: 0.25rem 0.5rem; /* lidt top/bund + sidepadding */
+  padding: 0.25rem 0.5rem;
   animation: scroll-x 22s linear infinite;
 }
-
-/* Badges (skills, certs, etc.) */
-.badge {
-  @apply inline-flex items-center gap-2 px-3 py-1 rounded text-sm font-medium truncate;
-  @apply bg-gray-100 text-gray-800 border border-gray-300; /* Light mode */
-  @apply dark:bg-gray-700 dark:text-white dark:border-gray-600; /* Dark mode */
-}
-
-.badge:hover {
-  @apply bg-gray-200 dark:bg-gray-600;
-}
-
-/* Skills chips */
-.chip {
-  @apply h-12 px-4 rounded-xl
-         border bg-white text-gray-900 shadow-sm
-         border-gray-300 hover:shadow-md hover:bg-gray-50
-         transition;
-
-  /* Dark mode */
-  @apply dark:bg-gray-800/60 dark:text-white
-         dark:border-gray-700 dark:shadow-none
-         dark:hover:bg-gray-800;
-}
-
-/* Pause på hover (fordi parent har .group) */
 .group:hover .scroll-track {
   animation-play-state: paused;
 }
 
-/* Ens container for sider */
-.page-main {
-  @apply max-w-4xl mx-auto px-4 py-16;
+/* =================================================================== */
+/* ===================  SKILLS: nye semantiske klasser  ============== */
+/* =================================================================== */
+
+/* Utilities for icons & small gaps */
+.i-lg {
+  @apply text-xl;
+}
+.i-sm {
+  @apply w-5 h-5;
+}
+.grid-gap {
+  @apply gap-3;
 }
 
-/* Ens h1-stil på tværs af sider */
-.page-title {
-  @apply text-4xl font-bold mb-6 text-center;
+/* Two-column reusable layout */
+.two-col {
+  @apply grid md:grid-cols-2 gap-6;
 }
-/* (du har også .projects-title med samme værdier – det er fint) */
+
+/* Auto grid with 160px min (erstatter inline arbitrary i JSX) */
+.auto-grid-160 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* Chip intern struktur */
+.chip-inner {
+  @apply h-full flex items-center gap-2;
+}
+.chip-icon {
+  @apply w-5 h-5 shrink-0;
+}
+.chip-label {
+  @apply font-medium text-sm leading-none whitespace-nowrap;
+}
+
+/* Certificates list */
+.cert-grid {
+  @apply grid sm:grid-cols-2 gap-5 mt-4;
+}
+
+.cert-card {
+  @apply text-left rounded-xl border border-gray-200 dark:border-gray-800
+         bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800
+         transition-colors p-4;
+}
+
+.cert-head {
+  @apply flex items-center gap-6;
+}
+
+.cert-logo {
+  @apply relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden
+         bg-gray-100 dark:bg-gray-700;
+}
+/* Brug ren CSS her – @apply kan ikke sætte !important */
+.img-contain {
+  object-fit: contain !important;
+  padding: 0.5rem !important;
+}
+
+.cert-meta {
+  @apply flex-1;
+}
+.cert-title {
+  @apply font-semibold leading-tight text-xl;
+}
+.cert-issuer {
+  @apply text-base text-gray-600 dark:text-gray-300;
+}
+.cert-date {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.cert-actions {
+  @apply mt-4 flex gap-3;
+}
+
+/* Buttons supplerende */
+.btn-outline {
+  @apply px-3 py-1 rounded-lg text-sm font-medium
+         border border-gray-300 dark:border-gray-600
+         bg-white dark:bg-gray-800
+         text-gray-700 dark:text-gray-200
+         hover:bg-gray-100 dark:hover:bg-gray-700 transition;
+}
+
+/* Modal */
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60;
+}
+.modal-panel {
+  @apply w-full max-w-lg rounded-2xl bg-white dark:bg-gray-900
+         border border-gray-200 dark:border-gray-800 shadow-xl;
+}
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800;
+}
+.modal-close {
+  @apply px-3 py-1 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+.modal-body {
+  @apply p-6 space-y-4;
+}
+.modal-text {
+  @apply text-sm text-gray-700 dark:text-gray-200 leading-relaxed;
+}
+.badge-row {
+  @apply flex flex-wrap gap-2;
+}
+.modal-footer {
+  @apply flex justify-end gap-3 px-6 py-4 border-t border-gray-200 dark:border-gray-800;
+}
+
+/* =================================================================== */
+/* ===================  ABOUT: semantiske hjælpeklasser  ============= */
+/* =================================================================== */
+
+.about-card-center {
+  @apply p-6 md:p-8 flex flex-col items-center gap-6;
+}
+.avatar-img {
+  @apply w-full h-full object-cover rounded-full;
+}
+
+.about-cta {
+  @apply inline-flex flex-col gap-3 items-center;
+}
+.cta-row {
+  @apply flex gap-3 w-max;
+}
+.btn-block {
+  @apply w-full;
+}
+
+/* Resume dropdown */
+.resume-menu {
+  @apply absolute left-0 mt-2 w-44 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden z-20;
+}
+.resume-item {
+  @apply block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+/* About layout tweaks */
+.about-grid-start {
+  @apply items-start;
+}
+.card-full {
+  @apply h-full;
+}
+
+/* Typografi helpers */
+.card-title-md {
+  @apply text-lg font-medium mb-3;
+}
+.card-title-xl {
+  @apply text-xl font-semibold mb-3;
+}
+.text-muted {
+  @apply text-gray-700 dark:text-gray-300;
+}
+.link-inline {
+  @apply inline-block mt-4 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+/* Progress list */
+.progress-list {
+  @apply space-y-3;
+}
+.progress-item {
+  @apply flex items-start gap-3;
+}
+.progress-dot {
+  @apply mt-1 h-3.5 w-3.5 rounded-full bg-gray-400/60 shrink-0;
+}
+.progress-dot--active {
+  @apply relative bg-green-500;
+}
+.progress-dot--active::after {
+  content: "";
+  @apply absolute inset-0 rounded-full bg-green-400 opacity-75;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+/* mimic Tailwind's animate-ping */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.progress-label {
+  @apply text-gray-700 dark:text-gray-300;
+}
+.progress-label--active {
+  @apply text-gray-900 dark:text-white font-semibold;
+}
+.progress-badge {
+  @apply ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20;
+}
+
+/* (Ingen override af .mt-12 – brug Tailwinds egen utility i JSX) */

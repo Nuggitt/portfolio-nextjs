@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
-// Brand-ikoner
 import {
   SiJavascript,
   SiTypescript,
@@ -24,7 +23,6 @@ import {
   SiTrello,
   SiFigma,
   SiFramer,
-  // NEW (fra CV)
   SiKotlin,
   SiPython,
   SiVuedotjs,
@@ -36,29 +34,21 @@ import {
   SiFilezilla,
   SiGooglecloud,
 } from "react-icons/si";
-
-// Generiske fallbacks
 import { Database, Mail, FlaskConical, Hash, Cloud, Code2 } from "lucide-react";
 
 export default function SkillsPage() {
-  // Ikon map
   const ICONS = {
-    // languages
     javascript: SiJavascript,
     typescript: SiTypescript,
     html: SiHtml5,
     css: SiCss3,
     dotnet: SiDotnet,
     node: SiNodedotjs,
-
-    // frameworks & libs
     react: SiReact,
     next: SiNextdotjs,
     tailwind: SiTailwindcss,
     prisma: SiPrisma,
     framermotion: SiFramer,
-
-    // tools
     git: SiGit,
     github: SiGithub,
     docker: SiDocker,
@@ -68,54 +58,38 @@ export default function SkillsPage() {
     jira: SiJirasoftware,
     trello: SiTrello,
     figma: SiFigma,
-
-    // NEW: languages
     kotlin: SiKotlin,
     python: SiPython,
-
-    // NEW: frameworks/libs
     vue: SiVuedotjs,
     axios: SiAxios,
     selenium: SiSelenium,
-    firebase: SiFirebase, // Firebase Auth
+    firebase: SiFirebase,
     tensorflow: SiTensorflow,
-    googlecloud: SiGooglecloud, // Vision API
-
-    // NEW: tools/devops
+    googlecloud: SiGooglecloud,
     githubactions: SiGithubactions,
     filezilla: SiFilezilla,
   };
 
-  // Render med fallback
   function RenderIcon({ name }) {
     const Comp = ICONS[name];
-    if (Comp) return <Comp className="text-xl" aria-hidden />;
+    if (Comp) return <Comp className="i-lg" aria-hidden />;
 
-    // Azure familie (ingen dedikerede react-icons)
-    if (name === "azure") {
-      return <Cloud className="w-5 h-5" aria-hidden />;
-    }
-    if (name === "azuredevops") {
-      return <Cloud className="w-5 h-5" aria-hidden />;
-    }
-
-    // Fallbacks
+    if (name === "azure" || name === "azuredevops" || name === "railway")
+      return <Cloud className="i-sm" aria-hidden />;
     if (name === "blazor" || name === "razor")
-      return <SiDotnet className="text-xl" aria-hidden />;
+      return <SiDotnet className="i-lg" aria-hidden />;
     if (name === "jetpack" || name === "syncfusion" || name === "ssms")
-      return <Code2 className="w-5 h-5" aria-hidden />;
-    if (name === "csharp") return <Hash className="w-5 h-5" aria-hidden />;
+      return <Code2 className="i-sm" aria-hidden />;
+    if (name === "csharp") return <Hash className="i-sm" aria-hidden />;
     if (name === "sql" || name === "entityframework")
-      return <Database className="w-5 h-5" aria-hidden />;
-    if (name === "railway") return <Cloud className="w-5 h-5" aria-hidden />;
-    if (name === "vscode") return <Code2 className="w-5 h-5" aria-hidden />;
-    if (name === "resend") return <Mail className="w-5 h-5" aria-hidden />;
-    if (name === "ci") return <FlaskConical className="w-5 h-5" aria-hidden />;
+      return <Database className="i-sm" aria-hidden />;
+    if (name === "vscode") return <Code2 className="i-sm" aria-hidden />;
+    if (name === "resend") return <Mail className="i-sm" aria-hidden />;
+    if (name === "ci") return <FlaskConical className="i-sm" aria-hidden />;
 
     return <span aria-hidden>🔹</span>;
   }
 
-  // ---------- DATA ----------
   const programming = {
     frontend: [
       { label: "JavaScript", key: "javascript" },
@@ -128,8 +102,8 @@ export default function SkillsPage() {
       { label: ".NET", key: "dotnet" },
       { label: "SQL", key: "sql" },
       { label: "Node.js", key: "node" },
-      { label: "Python", key: "python" }, // NEW
-      { label: "Kotlin", key: "kotlin" }, // NEW
+      { label: "Python", key: "python" },
+      { label: "Kotlin", key: "kotlin" },
     ],
   };
 
@@ -141,7 +115,6 @@ export default function SkillsPage() {
     { label: "Entity Framework", key: "entityframework" },
     { label: "Prisma", key: "prisma" },
     { label: "Framer Motion", key: "framermotion" },
-    // NEW
     { label: "Blazor", key: "blazor" },
     { label: "Razor Pages", key: "razor" },
     { label: "Vue.js", key: "vue" },
@@ -168,7 +141,6 @@ export default function SkillsPage() {
     { label: "Figma", key: "figma" },
     { label: "Resend (Email)", key: "resend" },
     { label: "CI/CD (GitHub)", key: "ci" },
-    // NEW
     { label: "Azure", key: "azure" },
     { label: "Azure DevOps", key: "azuredevops" },
     { label: "GitHub Actions", key: "githubactions" },
@@ -188,10 +160,8 @@ export default function SkillsPage() {
         "Covers the fundamentals of React.js, including components, JSX, state, props, and hooks, to build interactive and modern front-end applications.",
       link: "https://www.linkedin.com/learning/certificates/c448d4859efc99bec633b8554142b95408236c299b5c0d13217e78e57c306d6e?u=37487420",
     },
-    // …
   ];
 
-  // --- Modal state ---
   const [openId, setOpenId] = useState(null);
   const active = certificates.find((c) => c.id === openId) || null;
   const overlayRef = useRef(null);
@@ -204,30 +174,17 @@ export default function SkillsPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  function Badge({ text, node }) {
-    return (
-      <span className="badge" title={text}>
-        {node}
-        <span>{text}</span>
-      </span>
-    );
-  }
-
   function Grid({ items }) {
-    // sorter en kopi af items alfabetisk efter label
     const sorted = [...items].sort((a, b) => a.label.localeCompare(b.label));
-
     return (
-      <div className="grid [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] gap-3">
+      <div className="auto-grid-160 grid-gap">
         {sorted.map((it) => (
           <div key={it.label} className="chip">
-            <div className="h-full flex items-center gap-2">
-              <div className="w-5 h-5 shrink-0" aria-hidden>
+            <div className="chip-inner">
+              <div className="chip-icon" aria-hidden>
                 <RenderIcon name={it.key} />
               </div>
-              <div className="font-medium text-sm leading-none whitespace-nowrap">
-                {it.label}
-              </div>
+              <div className="chip-label">{it.label}</div>
             </div>
           </div>
         ))}
@@ -243,7 +200,7 @@ export default function SkillsPage() {
       {/* Programming Languages */}
       <h2 className="section-heading">Programming Languages</h2>
       <div className="title-accent-left" />
-      <section className="grid md:grid-cols-2 gap-6">
+      <section className="two-col">
         <div className="card">
           <h2 className="section-heading">Frontend Languages</h2>
           <Grid items={programming.frontend} />
@@ -257,7 +214,7 @@ export default function SkillsPage() {
       {/* Toolbox */}
       <h2 className="section-heading mt-12">Toolbox</h2>
       <div className="title-accent-left" />
-      <section className="grid md:grid-cols-2 gap-6">
+      <section className="two-col">
         <div className="card">
           <h2 className="section-heading">Tools & Platforms</h2>
           <Grid items={toolsPlatforms} />
@@ -274,61 +231,38 @@ export default function SkillsPage() {
       <section className="mt-6">
         <div className="card">
           <h2 className="section-heading">Certificates</h2>
-          <div className="grid sm:grid-cols-2 gap-5 mt-4">
+          <div className="cert-grid">
             {certificates.map((c) => (
-              <div
-                key={c.id}
-                className="group text-left rounded-xl border border-gray-200 
-                 dark:border-gray-800 bg-white/50 dark:bg-gray-800/50 
-                 hover:bg-white dark:hover:bg-gray-800 transition-colors 
-                 p-4"
-              >
-                <div className="flex items-center gap-6">
-                  {/* Mega logo */}
-                  <div className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-700">
+              <div key={c.id} className="cert-card">
+                <div className="cert-head">
+                  <div className="cert-logo">
                     <Image
                       src={c.logo}
                       alt={c.issuer}
                       fill
                       sizes="160px"
-                      className="object-contain p-2"
+                      className="img-contain"
                     />
                   </div>
-
-                  {/* Tekstblok */}
-                  <div className="flex-1">
-                    <div className="font-semibold leading-tight text-xl">
-                      {c.title}
-                    </div>
-                    <div className="text-base text-gray-600 dark:text-gray-300">
-                      {c.issuer}
-                    </div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
-                      {c.date}
-                    </div>
+                  <div className="cert-meta">
+                    <div className="cert-title">{c.title}</div>
+                    <div className="cert-issuer">{c.issuer}</div>
+                    <div className="cert-date">{c.date}</div>
                   </div>
                 </div>
 
-                {/* Actions */}
-                <div className="mt-4 flex gap-3">
+                <div className="cert-actions">
                   <a
                     href={c.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 rounded-lg text-sm font-medium
-                     bg-gradient-to-r from-blue-500 to-blue-600 text-white
-                     hover:opacity-90 transition"
+                    className="btn-gradient"
                   >
                     View on LinkedIn ↗
                   </a>
                   <button
                     onClick={() => setOpenId(c.id)}
-                    className="px-3 py-1 rounded-lg text-sm font-medium
-                     border border-gray-300 dark:border-gray-600
-                     bg-white dark:bg-gray-800
-                     text-gray-700 dark:text-gray-200
-                     hover:bg-gray-100 dark:hover:bg-gray-700
-                     transition"
+                    className="btn-outline"
                   >
                     Details
                   </button>
@@ -345,55 +279,38 @@ export default function SkillsPage() {
           ref={overlayRef}
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+          className="modal-overlay"
           onClick={(e) => {
             if (e.target === overlayRef.current) setOpenId(null);
           }}
         >
-          <div
-            className="w-full max-w-lg rounded-2xl bg-white dark:bg-gray-900 
-                    border border-gray-200 dark:border-gray-800 shadow-xl"
-          >
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-              <div className="flex items-center gap-6">
-                {/* Kæmpe logo */}
-                <div className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-700">
+          <div className="modal-panel">
+            <div className="modal-header">
+              <div className="cert-head">
+                <div className="cert-logo">
                   <Image
                     src={active.logo}
                     alt={active.issuer}
                     fill
                     sizes="160px"
-                    className="object-contain p-2"
+                    className="img-contain"
                   />
                 </div>
-
-                {/* Tekstblok */}
-                <div className="flex-1">
-                  <div className="font-semibold leading-tight text-2xl">
-                    {active.title}
-                  </div>
-                  <div className="text-base text-gray-600 dark:text-gray-300">
+                <div className="cert-meta">
+                  <div className="cert-title text-2xl">{active.title}</div>
+                  <div className="cert-issuer">
                     {active.issuer} • {active.date}
                   </div>
                 </div>
               </div>
-
-              <button
-                onClick={() => setOpenId(null)}
-                className="px-3 py-1 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
+              <button onClick={() => setOpenId(null)} className="modal-close">
                 ✕
               </button>
             </div>
 
-            {/* Body */}
-            <div className="p-6 space-y-4">
-              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-                {active.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
+            <div className="modal-body">
+              <p className="modal-text">{active.description}</p>
+              <div className="badge-row">
                 {active.skills.map((s) => (
                   <span key={s} className="badge">
                     {s}
@@ -402,27 +319,16 @@ export default function SkillsPage() {
               </div>
             </div>
 
-            {/* Footer */}
-            <div className="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="modal-footer">
               <a
                 href={active.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1 rounded-lg text-sm font-medium
-                     bg-gradient-to-r from-blue-500 to-blue-600 text-white
-                     hover:opacity-90 transition"
+                className="btn-gradient"
               >
                 View on LinkedIn ↗
               </a>
-              <button
-                onClick={() => setOpenId(null)}
-                className="px-3 py-1 rounded-lg text-sm font-medium
-                     border border-gray-300 dark:border-gray-600
-                     bg-white dark:bg-gray-800
-                     text-gray-700 dark:text-gray-200
-                     hover:bg-gray-100 dark:hover:bg-gray-700
-                     transition"
-              >
+              <button onClick={() => setOpenId(null)} className="btn-outline">
                 Close
               </button>
             </div>
