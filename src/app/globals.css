@@ -123,13 +123,13 @@ footer p {
   @apply bg-gray-200 dark:bg-gray-700;
 }
 .project-table th {
-  @apply px-4 py-3 text-sm font-semibold text-gray-800 dark:text-gray-200;
+  @apply px-4 py-3 text-sm font-semibold text-gray-800 dark:text-gray-200 align-top;
 }
 .project-table tbody tr {
   @apply bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition;
 }
 .project-table td {
-  @apply px-4 py-3 text-sm text-gray-700 dark:text-gray-300;
+  @apply px-4 py-3 text-sm text-gray-700 dark:text-gray-300 align-top;
 }
 
 /* ===== Timeline (shared) ===== */

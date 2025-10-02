@@ -234,10 +234,10 @@ export default function ProjectsPage() {
                       key={i}
                       className="table-row align-top border-b border-gray-200 dark:border-gray-700 last:border-b-0"
                     >
-                      <td>{proj.year}</td>
-                      <td className="font-medium">{proj.title}</td>
-                      <td>{proj.type}</td>
-                      <td>
+                      <td className="align-top">{proj.year}</td>
+                      <td className="font-medium align-top">{proj.title}</td>
+                      <td className="align-top">{proj.type}</td>
+                      <td className="align-top">
                         <div className="flex flex-wrap gap-2">
                           {proj.tech.map((t, j) => (
                             <span key={j} className="tag">
@@ -246,7 +246,7 @@ export default function ProjectsPage() {
                           ))}
                         </div>
                       </td>
-                      <td>
+                      <td className="align-top">
                         <div className="flex flex-wrap gap-2">
                           {Array.isArray(proj.github) ? (
                             proj.github.map((link) => {
@@ -281,17 +281,19 @@ export default function ProjectsPage() {
                           ) : null}
                         </div>
                       </td>
-                      <td>
-                        {proj.live && (
-                          <a
-                            href={proj.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-blue"
-                          >
-                            Live ↗
-                          </a>
-                        )}
+                      <td className="align-top">
+                        <div className="flex flex-wrap gap-2">
+                          {proj.live && (
+                            <a
+                              href={proj.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn-blue"
+                            >
+                              Live ↗
+                            </a>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))}
