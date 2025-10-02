@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       type: "School Project",
       tech: ["C#", ".NET", "HTML", "CSS", "JSON", "Bootstrap"],
       github: "https://github.com/Nuggitt/SharkGaming",
-      live: "https://example.com/exam-system",
+      live: "https://sharkgaming20251002151758-h9frc0gyawejf3fg.swedencentral-01.azurewebsites.net/",
     },
     {
       year: 2023,
