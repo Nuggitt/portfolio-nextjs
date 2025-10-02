@@ -1,5 +1,3 @@
-"use client";
-
 export default function Footer() {
   const now = new Date();
   const yyyy = now.getFullYear();
@@ -9,7 +7,6 @@ export default function Footer() {
   return (
     <footer>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
-        {/* Link-række */}
         <div className="link-row">
           <a
             href="https://www.linkedin.com/in/phni"
@@ -33,8 +30,6 @@ export default function Footer() {
             Facebook
           </a>
         </div>
-
-        {/* Centreret under links */}
         <p>
           Last updated: {dd}-{mm}-{yyyy}
         </p>
