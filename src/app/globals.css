@@ -229,17 +229,28 @@ footer p {
 
 /* ===== Ensartet år-label i midten ===== */
 .timeline-year {
-  @apply hidden sm:block absolute text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
+  @apply hidden sm:block absolute text-sm font-mono tracking-wide transition-colors duration-300;
   top: 50%;
   transform: translateY(-50%);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(2px);
   min-width: 3.2rem;
   text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); /* lille shadow så den ikke flyder ud */
+}
+
+/* Light mode = samme som card */
+.timeline-year {
+  background: #ffffff; /* matcher bg-white */
+  color: #374151; /* gray-700 tekst */
+}
+
+/* Dark mode = samme som card */
+.dark .timeline-year {
+  background: #1f2937; /* matcher bg-gray-800 */
+  color: #d1d5db; /* gray-300 tekst */
 }
 
 .timeline-year:hover {
