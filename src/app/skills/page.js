@@ -150,15 +150,70 @@ export default function SkillsPage() {
 
   const certificates = [
     {
-      id: "az900",
-      title: "Learning React.js ",
-      issuer: "Linkedin Learning",
-      date: " Jul 29 2025",
-      logo: "/images/learningnextjs.png",
-      skills: ["Web Development", "Front-End-Development", "Next.js", "React"],
+      id: "learning-react",
+      title: "Learning React.js",
+      issuer: "LinkedIn Learning",
+      date: "Jul 29 2025",
+      logo: "/images/reactimage.png",
+      skills: ["Web Development", "Front-End Development", "React"],
       description:
         "Covers the fundamentals of React.js, including components, JSX, state, props, and hooks, to build interactive and modern front-end applications.",
+      link: "https://www.linkedin.com/learning/certificates/83d995916083ad22b4ad10592d82c0d6266e1b05ed95afb0e54053552b915fcc?u=37487420",
+    },
+    {
+      id: "learning-nextjs",
+      title: "Learning Next.js",
+      issuer: "LinkedIn Learning",
+      date: "Jul 29 2025",
+      logo: "/images/learningnextjs.png",
+      skills: ["Web Development", "Front-End Development", "Next.js"],
+      description:
+        "Introduces the Next.js framework, including routing, API routes, and server-side rendering, to build full-featured and production-ready React applications.",
       link: "https://www.linkedin.com/learning/certificates/c448d4859efc99bec633b8554142b95408236c299b5c0d13217e78e57c306d6e?u=37487420",
+    },
+    {
+      id: "css-essential",
+      title: "CSS Essential Training (2019)",
+      issuer: "LinkedIn Learning",
+      date: "Aug 14 2023",
+      logo: "/images/cssimage.png",
+      skills: ["Cascading Style Sheets (CSS)", "Web Design"],
+      description:
+        "Covers the fundamentals of CSS, including selectors, the box model, positioning, colors, typography, and responsive layouts.",
+      link: "https://www.linkedin.com/learning/certificates/20ee8981fffa1b9294a7126ebea35dfe1c233d9c378660b318e61b2c50c6b317?u=37487420",
+    },
+    {
+      id: "html-essential",
+      title: "HTML Essential Training (2020)",
+      issuer: "LinkedIn Learning",
+      date: "Aug 02 2023",
+      logo: "/images/htmlimage.png",
+      skills: ["HTML", "Web Development"],
+      description:
+        "Provides a solid foundation in HTML5, covering document structure, elements, attributes, links, media, and best practices for building semantic markup.",
+      link: "https://www.linkedin.com/learning/certificates/3b0b3576c9aad075a9a34a8f419074f289707fa9c5699db06136ff876ef90a52?u=37487420",
+    },
+    {
+      id: "learning-csharp",
+      title: "Learning C#",
+      issuer: "LinkedIn Learning",
+      date: "Oct 04 2023",
+      logo: "/images/csharpimage.png",
+      skills: ["C#", ".NET Development"],
+      description:
+        "Introduces the basics of C# programming, including syntax, types, control flow, methods, and object-oriented principles for building .NET applications.",
+      link: "https://www.linkedin.com/learning/certificates/d7fa3880ea8837bf379d3effea0b4bfb4925d38e9241cefbedc7440b557bb6a0?u=37487420",
+    },
+    {
+      id: "sql-essential",
+      title: "SQL Essential Training",
+      issuer: "LinkedIn Learning",
+      date: "Oct 22 2023",
+      logo: "/images/sqlimage.png",
+      skills: ["SQL", "Databases"],
+      description:
+        "Explains the foundations of SQL for querying databases, including SELECT statements, filtering, joins, aggregations, and data manipulation.",
+      link: "https://www.linkedin.com/learning/certificates/aca00c97cf9982422b6e9eefa68b732fe6147baab14a8c26f628dae2cffd8143?u=37487420",
     },
   ];
 

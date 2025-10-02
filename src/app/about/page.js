@@ -232,13 +232,13 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="card card-full"
           >
-            <h2 className="card-title-md">Task Tracker App</h2>
+            <h2 className="card-title-md">Portfolio Website</h2>
             <p className="text-muted">
-              A focused productivity tool where I explore{" "}
-              <b>React state patterns</b>, <b>local storage persistence</b>, and
-              small <b>UI micro-interactions</b>.
+              A personal portfolio website showcasing my projects and skills,
+              built with <b>Next.js</b>, <b>JavaScript</b>, and{" "}
+              <b>Tailwind CSS</b>.
             </p>
-            <Link href="/projects" className="link-inline">
+            <Link href="/projects" className="btn-blue mt-4 inline-block">
               View all projects ↗
             </Link>
           </motion.div>
