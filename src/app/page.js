@@ -68,21 +68,20 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Recent Graduate */}
           <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">Recent Graduate</h3>
+            <h3 className="card-title-md">Completed Computer Science AP</h3>
             <p className="text-muted">
-              Computer Science AP — comfortable from idea to deployment.
+              Computer Science AP graduate with hands-on experience in
+              full-stack development. Agile methodologies and collaborative
+              projects.
             </p>
           </div>
 
-          {/* Portfolio almost production-ready */}
+          {/* Portfolio */}
           <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">
-              Portfolio: almost production-ready
-            </h3>
+            <h3 className="card-title-md">Portfolio Almost Production Ready</h3>
             <p className="text-muted">
-              Dark, minimal Next.js + Tailwind build with unified theming and
-              SEO configured (title, description, canonical, Open&nbsp;Graph).
-              Final polish before production deploy.
+              Dark or Light, minimal Next.js + Tailwind build with unified
+              theming and responsive design.
             </p>
           </div>
 
