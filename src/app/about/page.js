@@ -6,14 +6,45 @@ import { useEffect, useRef, useState } from "react";
 
 export default function AboutPage() {
   const tech = [
+    // Programming languages
     "C#",
     ".NET",
     "SQL",
     "JavaScript",
+    "TypeScript",
+    "Python",
+    "Kotlin",
+    "HTML",
+    "CSS",
+
+    // Frameworks & libraries
     "React",
     "Next.js",
     "Tailwind CSS",
+    "ASP.NET",
+    "Entity Framework",
+    "Blazor",
+    "Razor Pages",
+    "Vue.js",
+    "Jetpack Compose",
+    "Syncfusion",
+    "Axios",
+    "Selenium",
+    "TensorFlow",
+    "Firebase Auth",
+
+    // Tools & platforms
     "Git",
+    "GitHub",
+    "VS Code",
+    "Docker",
+    "Vercel",
+    "Linux",
+    "Postman",
+    "CI/CD (GitHub)",
+    "Azure",
+    "Azure DevOps",
+    "GitHub Actions",
   ];
 
   const projectSteps = [
@@ -262,7 +293,10 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="card text-center group"
         >
-          <div className="scroll-container">
+          <div
+            className="scroll-container"
+            style={{ ["--marquee-speed"]: "120s" }}
+          >
             <ul className="scroll-track">
               {[...tech, ...tech].map((item, i) => (
                 <li key={`${item}-${i}`} className="tag whitespace-nowrap">

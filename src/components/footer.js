@@ -1,15 +1,11 @@
 "use client";
 
 export default function Footer() {
-  const now = new Date();
-  const yyyy = now.getFullYear();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
+  const updated = process.env.NEXT_PUBLIC_LAST_UPDATED;
 
   return (
     <footer>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
-        {/* Link-række */}
         <div className="link-row">
           <a
             href="https://www.linkedin.com/in/phni"
@@ -34,9 +30,15 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Centreret under links */}
         <p>
-          Last updated: {dd}-{mm}-{yyyy}
+          Last updated:{" "}
+          {updated
+            ? new Date(updated).toLocaleDateString("da-DK", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              })
+            : "Unknown"}
         </p>
       </div>
     </footer>
