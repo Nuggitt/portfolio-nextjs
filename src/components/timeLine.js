@@ -3,24 +3,43 @@ import { useEffect, useRef, useState } from "react";
 
 const experiences = [
   {
-    company: "ChannelCRM",
+    company: "Beezy365",
     title: "Internship - Software Developer",
     start: "Jan 2025",
     end: "Mar 2025",
-    year: "2025",
     description:
-      "Worked on internal web applications using .NET and SQL Server. Collaborated with senior developers, participated in code reviews, and helped build production features.",
+      "Developed different Integrations in the ChannelCRM system, a time registration module in C#, .NET, and Blazor with Syncfusion. Integrated AI features (RAG and CAG) into the CRM system. Designed system architecture with UML and worked on SQL database management. Built API controllers for CRUD operations in an agile team setup.",
   },
   {
-    company: "School Project Heatwaves",
-    title: "Scrum Master & Developer",
-    start: "April 2024",
-    end: "June 2024",
-    year: "2024",
+    company: "Biometric Solutions",
+    title: "Production Technician",
+    start: "Feb 2022",
+    end: "Feb 2024",
     description:
-      "Led and contributed the Heatwaves project in academic settings. Gained experience in project management, teamwork, and full software development lifecycle.",
+      "Handled setup and installation of hardware, components, software, and firmware. Performed testing and quality assurance of products, troubleshooting, and technical issue resolution.",
+  },
+  {
+    company: "Herlev Ungdomsskole",
+    title: "IT Assistant",
+    start: "Sep 2020",
+    end: "Sep 2021",
+    description:
+      "Supported daily IT operations for staff and students, optimized digital media setups, and prepared IT equipment for secure digital exams. Assisted with troubleshooting and user support.",
+  },
+  {
+    company: "SFO Skovvang",
+    title: "After-School Educator",
+    start: "Aug 2016",
+    end: "Feb 2020",
+    description:
+      "Developed children's digital and social skills through media education and digital literacy. Acted as IT responsible for the SFO, integrating digital tools and supporting staff with technology.",
   },
 ];
+
+function getYear(dateStr) {
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? "" : String(d.getFullYear());
+}
 
 function useInViewOnce(
   options = { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
@@ -106,6 +125,8 @@ export default function WorkTimeline() {
       <div className="timeline-center-line" />
       {experiences.map((exp, index) => {
         const isLeft = index % 2 === 0;
+        // Kun ét år i midten (slutår falder tilbage til startår, hvis nødvendigt)
+        const yearLabel = getYear(exp.end) || getYear(exp.start);
         return (
           <div key={index} className="timeline-row">
             <div className="timeline-col-left">
@@ -125,7 +146,7 @@ export default function WorkTimeline() {
                     : "timeline-year timeline-year--left"
                 }
               >
-                {exp.year}
+                {yearLabel}
               </span>
             </div>
 

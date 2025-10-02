@@ -190,7 +190,10 @@ footer p {
 
 /* Skjul centerkolonnen helt på mobil */
 .timeline-center-col {
-  display: none;
+  /* ... dine eksisterende regler ... */
+  position: relative; /* sikkerhed, hvis ikke allerede sat via class */
+  --dot: 16px; /* matcher .timeline-dot--center w-4 h-4 (16px) */
+  --gap: 8px; /* luft mellem dot og label */
 }
 
 /* Kolonner på mobil = samme kolonne */
@@ -224,17 +227,46 @@ footer p {
   @apply hidden sm:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-blue-500 shadow-lg;
 }
 
+/* ===== Ensartet år-label i midten ===== */
 .timeline-year {
-  @apply hidden sm:block absolute top-1/2 -translate-y-1/2 text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
+  @apply hidden sm:block absolute text-sm font-mono tracking-wide text-gray-600 dark:text-gray-300 transition-colors duration-300;
+  top: 50%;
+  transform: translateY(-50%);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+  min-width: 3.2rem;
+  text-align: center;
 }
+
 .timeline-year:hover {
   @apply text-blue-600 dark:text-blue-400;
 }
+
 .timeline-year--right {
-  @apply left-1/2 ml-4 text-left;
+  left: 50%;
+  /* offset = halvdelen af dot + gap */
+  transform: translate(calc(var(--dot) / 2 + var(--gap)), -50%);
+  text-align: left;
 }
+
 .timeline-year--left {
-  @apply right-1/2 mr-4 text-right;
+  right: 50%;
+  transform: translate(calc(-1 * (var(--dot) / 2 + var(--gap))), -50%);
+  text-align: right;
+}
+
+/* Lidt ekstra plads, hvis teksterne kommer tæt på linjen på små skærme */
+@media (max-width: 768px) {
+  .timeline-year--left {
+    margin-right: 0.5rem;
+  }
+  .timeline-year--right {
+    margin-left: 0.5rem;
+  }
 }
 
 /* ===== Contact ===== */

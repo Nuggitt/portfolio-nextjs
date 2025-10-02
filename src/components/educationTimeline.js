@@ -3,22 +3,22 @@ import { useEffect, useRef, useState } from "react";
 
 const educations = [
   {
-    institution: "University of Example",
-    degree: "BSc in Computer Science",
-    start: "Sep 2021",
-    end: "Jun 2024",
-    year: "2024",
+    institution: "Zealand Roskilde",
+    degree: "AP Graduate in Computer Science",
+    start: "Sep 2022",
+    end: "Jun 2025",
+    year: "2025",
     description:
-      "Focused on software engineering, .NET, web technologies, and databases. Projects in Next.js and cloud deployment.",
+      "Focused on software development with .NET, C#, Razor Pages, Blazor, SQL, and web technologies such as HTML, CSS, Bootstrap, and Vue.js. Practical experience with CRUD operations, REST API integration, and Agile methods like Scrum and XP. Projects included Next.js development, cloud deployment, and AI integration in CRM systems using RAG and CAG.",
   },
   {
-    institution: "University of Example",
-    degree: "BSc in Computer Science",
-    start: "Sep 2021",
-    end: "Jun 2024",
-    year: "2024",
+    institution: "UCC Frøbel, København",
+    degree: "Professional Bachelor's Degree in Pedagogy",
+    start: "Feb 2013",
+    end: "Aug 2016",
+    year: "2016",
     description:
-      "Focused on software engineering, .NET, web technologies, and databases. Projects in Next.js and cloud deployment.",
+      "Focused on educational theory, child development, and social pedagogy. Specialized in media pedagogy and digital literacy, with hands-on teaching experience. Served as IT coordinator for the after-school program (SFO), responsible for digital tools, support, and integration of technology in learning activities.",
   },
 ];
 

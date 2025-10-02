@@ -177,7 +177,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="card"
         >
-          <h2 className="card-title-xl">Values & Working Style</h2>
+          <h2 className="card-title-xl">My Values & How I Work</h2>
           <p className="text-muted">
             I value being <b>open-minded</b> and see mistakes as opportunities
             to learn. I strive to stay <b>reflective</b> about my work and
