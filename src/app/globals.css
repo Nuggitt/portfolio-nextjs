@@ -78,7 +78,7 @@ footer p {
 
 /* ===== Projects ===== */
 .projects-page {
-  @apply max-w-6xl mx-auto px-4 py-12 sm:py-16;
+  @apply max-w-5xl mx-auto px-4 py-12 sm:py-16;
 }
 .projects-title {
   @apply text-4xl font-bold mb-10 text-center;
@@ -94,7 +94,8 @@ footer p {
   @apply w-full h-40 object-cover;
 } /* h-30 → h-40 */
 .project-content {
-  @apply p-4 flex-1;
+  /* før: @apply p-4 flex-1; */
+  @apply p-4 flex flex-col flex-1; /* ⬅️ gør den til flex container + fyld højden */
 }
 .project-title {
   @apply text-xl font-bold mb-2;

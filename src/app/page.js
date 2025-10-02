@@ -8,7 +8,7 @@ import ResumeMenuInline from "@/components/resumeMenuInline";
 export const metadata = {
   title: "Philip | Fullstack .NET & React Developer",
   description:
-    "Recently graduated Computer Science AP full‑stack developer building fast, scalable, and user‑friendly web apps with .NET, C#, React/Next.js, SQL, and Tailwind.",
+    "Recently graduated Computer Science AP full-stack developer building fast, scalable, and user-friendly web apps with .NET, C#, React/Next.js, SQL, and Tailwind.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Philip — Fullstack .NET & React Developer",
@@ -20,15 +20,20 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  const badges = [
-    ".NET",
+  // 🔹 Core + Secondary badges
+  const primaryBadges = [
     "C#",
+    ".NET",
+    "ASP.NET",
+    "Entity Framework",
+    "SQL",
     "React",
     "Next.js",
-    "SQL",
+    "TypeScript",
     "Tailwind CSS",
     "Git",
   ];
+  const secondaryBadges = ["Docker", "Azure", "GitHub Actions", "Vercel"];
 
   return (
     <main className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20">
@@ -54,53 +59,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HIGHLIGHTS (uses same card style as About) */}
+      {/* HIGHLIGHTS */}
       <section className="mt-20">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">
           Highlights
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">Full-stack Development</h3>
-            <p className="text-muted">
-              Scalable .NET APIs with clean architecture + modern React/Next.js
-              frontends.
-            </p>
-          </div>
-
-          <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">Production-minded</h3>
-            <p className="text-muted">
-              Focus on performance, DX, accessibility, and responsive design.
-            </p>
-          </div>
-
+          {/* Recent Graduate */}
           <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
             <h3 className="card-title-md">Recent Graduate</h3>
             <p className="text-muted">
               Computer Science AP — comfortable from idea to deployment.
             </p>
           </div>
+
+          {/* Portfolio almost production-ready */}
+          <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
+            <h3 className="card-title-md">
+              Portfolio: almost production-ready
+            </h3>
+            <p className="text-muted">
+              Dark, minimal Next.js + Tailwind build with unified theming and
+              SEO configured (title, description, canonical, Open&nbsp;Graph).
+              Final polish before production deploy.
+            </p>
+          </div>
+
+          {/* React & Next.js certifications */}
+          <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
+            <h3 className="card-title-md">React & Next.js certifications</h3>
+            <p className="text-muted">
+              Completed LinkedIn Learning courses in React and Next.js; applying
+              them directly in new projects.
+            </p>
+            <Link href="/skills" className="btn-blue mt-4 inline-block">
+              See certificates
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* QUICK TECH BADGES */}
-      <section className="mt-16">
-        <h2 className="sr-only">Technologies</h2>
+      {/* TECH BADGES */}
+      <section className="mt-16" aria-labelledby="tech-heading">
+        <h2 id="tech-heading" className="sr-only">
+          Technologies
+        </h2>
+
+        {/* Core stack */}
         <div className="flex flex-wrap justify-center gap-3">
-          {badges.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 rounded-lg text-sm font-medium bg-slate-700 text-white dark:bg-gray-700 dark:text-white"
-            >
+          {primaryBadges.map((t) => (
+            <span key={t} className="badge">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Tooling & Cloud */}
+        <div className="mt-4 flex flex-wrap justify-center gap-3">
+          {secondaryBadges.map((t) => (
+            <span key={t} className="badge">
               {t}
             </span>
           ))}
         </div>
       </section>
 
-      {/* CLOSING CTA */}
+      {/* CTA */}
       <section className="mt-20 text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
           Let&apos;s build something great together
