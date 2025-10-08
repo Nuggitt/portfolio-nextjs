@@ -44,7 +44,7 @@ export default function ProjectsPage() {
       type: "School Project",
       tech: ["C#", ".NET", "ADO.NET", "SQL", "HTML", "Bootstrap", "CSS"],
       github: "https://github.com/Nuggitt/LodSalgsSystemFDF",
-      live: "https://example.com/fdf-ticket-system",
+      live: "https://fdfticket.nuggit.dk/",
     },
     {
       year: 2024,
