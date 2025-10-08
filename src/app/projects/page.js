@@ -6,7 +6,7 @@ export default function ProjectsPage() {
         "A modern developer portfolio built with Next.js and Tailwind.",
       tech: ["Next.js", "Tailwind CSS", "Vercel"],
       github: "https://github.com/Nuggitt/portfolio-nextjs",
-      live: "https://example.com/portfolio",
+      live: "https://portfolio.nuggit.dk/",
       image: "/images/portfolio-white.png",
     },
     {
