@@ -8,7 +8,7 @@ const experiences = [
     start: "Jan 2025",
     end: "Mar 2025",
     description:
-      "Developed different Integrations in the ChannelCRM system, a time registration module in C#, .NET, and Blazor with Syncfusion. Integrated AI features (RAG and CAG) into the CRM system. Designed system architecture with UML and worked on SQL database management. Built API controllers for CRUD operations in an agile team setup.",
+      "Developed different Integrations in the ChannelCRM system, a time registration module in C#, .NET, and Blazor with Syncfusion. Integrated AI features (RAG and CAG). Designed system architecture with UML and worked on SQL database management. Built API controllers for CRUD operations in an agile team setup.",
   },
   {
     company: "Biometric Solutions",
