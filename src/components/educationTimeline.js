@@ -9,7 +9,7 @@ const educations = [
     end: "Jun 2025",
     year: "2025",
     description:
-      "Focused on software development with .NET, C#, Razor Pages, Blazor, SQL, and web technologies such as HTML, CSS, Bootstrap, and Vue.js. Practical experience with CRUD operations, REST API integration, and Agile methods like Scrum and XP. Projects included Next.js development, cloud deployment, and AI integration in CRM systems using RAG and CAG.",
+      "Focused on software development with .NET, C#, Razor Pages, Blazor, SQL, and web technologies such as HTML, CSS, Bootstrap, and Vue.js. Practical experience with CRUD operations, REST API integration, and Agile methods like Scrum and XP. Projects included development, cloud deployment, and AI integration in CRM systems using RAG and CAG technologies.",
   },
   {
     institution: "UCC Frøbel, København",

@@ -54,7 +54,7 @@ export default function AboutPage() {
     "Testing and gathering feedback",
     "Deploying and continuous improvement",
   ];
-  const currentStep = 2;
+  const currentStep = 3;
 
   const [resumeOpen, setResumeOpen] = useState(false);
   const resumeRef = useRef(null);
