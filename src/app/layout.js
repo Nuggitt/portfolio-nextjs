@@ -41,6 +41,25 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Set theme before the first paint to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = saved ? saved === 'dark' : prefersDark;
+    var root = document.documentElement;
+    if (dark) root.classList.add('dark'); else root.classList.remove('dark');
+    // Helps form controls & UA styles match instantly
+    root.style.colorScheme = dark ? 'dark' : 'light';
+  } catch (e) {}
+})();`,
+          }}
+        />
+      </head>
       <body className="min-h-dvh bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 antialiased">
         <ThemeProvider>
           <div className="min-h-dvh flex flex-col">

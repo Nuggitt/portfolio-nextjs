@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext({ darkMode: null, setDarkMode: () => {} });
 
 export function useTheme() {
   return useContext(ThemeContext);
@@ -10,19 +10,17 @@ export function useTheme() {
 export default function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(null);
 
+  // Just read the class the no-flash script already set
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const enabled = saved === "dark" || (!saved && prefersDark);
-    setDarkMode(enabled);
-    document.documentElement.classList.toggle("dark", enabled);
+    const initial = document.documentElement.classList.contains("dark");
+    setDarkMode(initial);
   }, []);
 
+  // Keep DOM + storage in sync when user toggles
   useEffect(() => {
     if (darkMode === null) return;
     document.documentElement.classList.toggle("dark", darkMode);
+    document.documentElement.style.colorScheme = darkMode ? "dark" : "light";
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
