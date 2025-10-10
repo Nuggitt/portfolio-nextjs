@@ -43,9 +43,9 @@ export default function HomePage() {
           Hi, I&apos;m Philip <span aria-hidden>👋</span>
         </h1>
         <p className="about-lead max-w-3xl mx-auto">
-          I&apos;m a recently graduated Computer Science AP student specializing
-          in full-stack development. I build modern and responsive web apps
-          using <b>.NET</b>, <b>C#</b>, and <b>Next.js</b>.
+          I&apos;m a graduated Computer Science AP student specializing in
+          full-stack development. I build modern and responsive web apps using{" "}
+          <b>.NET</b>, <b>C#</b>, <b>React</b>, and <b>Next.js</b>.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -68,11 +68,12 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Recent Graduate */}
           <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">Completed Computer Science AP</h3>
+            <h3 className="card-title-md">
+              Finished Education as a Computer Science AP Graduate
+            </h3>
             <p className="text-muted">
-              Computer Science AP graduate with hands-on experience in
-              full-stack development. Agile methodologies and collaborative
-              projects.
+              Achieved hands-on experience in full-stack development. Agile
+              methodologies and collaborative projects.
             </p>
           </div>
 
@@ -81,7 +82,8 @@ export default function HomePage() {
             <h3 className="card-title-md">Portfolio Almost Production Ready</h3>
             <p className="text-muted">
               Dark or Light, minimal Next.js + Tailwind build with unified
-              theming and responsive design.
+              theming and responsive design. Woke up old projects and deployed
+              them for live demos
             </p>
           </div>
 
@@ -131,7 +133,8 @@ export default function HomePage() {
         </h2>
         <p className="text-muted mb-6 max-w-2xl mx-auto">
           I enjoy turning ideas into reliable products. If you have a project in
-          mind or want to collaborate, I&apos;d love to hear from you.
+          mind or want to collaborate, I&apos;d love to hear from you. If you
+          got any questions, feel free to use the contact form.
         </p>
         <Link href="/contact" className="btn-blue">
           Get in Touch
