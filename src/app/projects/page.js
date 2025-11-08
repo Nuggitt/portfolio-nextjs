@@ -20,9 +20,10 @@ export default function ProjectsPage() {
       image: "/images/portfolio-white.png",
     },
     {
-      title: "Kids Clothing Order System - TO BE MADE",
+      title:
+        "Lisberg  Threads - Clothing Order Management For Friends & Family",
       description:
-        "A full-stack application for managing clothing orders for kids for friends and family.",
+        "A full-stack application for managing clothing orders for kids/adults for friends and family.",
       tech: [".Blazor", "C#", ".NET", "SQL Server"],
       github: "",
       live: "",
@@ -42,6 +43,7 @@ export default function ProjectsPage() {
   const earlierProjects = [
     {
       year: 2022,
+      quarter: "Q4",
       title: "Shark Gaming Website",
       type: "School Project",
       tech: ["C#", ".NET", "Razorpages", "HTML", "CSS", "JSON", "Bootstrap"],
@@ -50,6 +52,7 @@ export default function ProjectsPage() {
     },
     {
       year: 2023,
+      quarter: "Q4",
       title: "FDF Ticket System",
       type: "School Project",
       tech: ["C#", ".NET", "ADO.NET", "SQL", "HTML", "Bootstrap", "CSS"],
@@ -58,6 +61,7 @@ export default function ProjectsPage() {
     },
     {
       year: 2024,
+      quarter: "Q2",
       title: "Heatwaves - Temperature Data Analysis",
       type: "School Project",
       tech: [
@@ -90,6 +94,7 @@ export default function ProjectsPage() {
     },
     {
       year: 2025,
+      quarter: "Q1",
       title: "Beer Basement",
       type: "School Project",
       tech: [
@@ -109,7 +114,36 @@ export default function ProjectsPage() {
       ],
       github: "https://github.com/Nuggitt/BeerBasement",
     },
+    {
+      year: 2025,
+      quarter: "Q3",
+      title: "Portfolio Website",
+      type: "Personal Project",
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Vercel",
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "Git",
+        "GitHub",
+      ],
+      github: "https://github.com/Nuggitt/portfolio-nextjs",
+      live: "https://portfolio.nuggit.dk/",
+      image: "/images/portfolio-white.png",
+    },
   ];
+
+  const byYearQuarterDesc = (a, b) => {
+    if (b.year !== a.year) return b.year - a.year;
+    const q = (p) =>
+      p?.quarter
+        ? parseInt(String(p.quarter).replace(/[^0-9]/g, ""), 10) || 0
+        : 0;
+    return q(b) - q(a);
+  };
 
   return (
     <main className="projects-page">
@@ -177,7 +211,8 @@ export default function ProjectsPage() {
         {/* MOBILE: stacked cards (vises kun < md) */}
         <div className="md:hidden space-y-4">
           {earlierProjects
-            .sort((a, b) => b.year - a.year)
+            .slice() // undgå at mutere originalen
+            .sort(byYearQuarterDesc)
             .map((proj, i) => (
               <article
                 key={i}
@@ -266,7 +301,8 @@ export default function ProjectsPage() {
               </thead>
               <tbody>
                 {earlierProjects
-                  .sort((a, b) => b.year - a.year)
+                  .slice()
+                  .sort(byYearQuarterDesc)
                   .map((proj, i) => (
                     <tr
                       key={i}

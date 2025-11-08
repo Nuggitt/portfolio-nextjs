@@ -54,7 +54,7 @@ export default function AboutPage() {
     "Testing and gathering feedback",
     "Deploying and continuous improvement",
   ];
-  const currentStep = 3;
+  const currentStep = 0;
 
   const [resumeOpen, setResumeOpen] = useState(false);
   const resumeRef = useRef(null);
@@ -232,11 +232,12 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="card card-full"
           >
-            <h2 className="card-title-md">Portfolio Website</h2>
+            <h2 className="card-title-md">Lisberg Threads</h2>
             <p className="text-muted">
-              A personal portfolio website showcasing my projects and skills,
-              built with <b>Next.js</b>, <b>JavaScript</b>, and{" "}
-              <b>Tailwind CSS</b>.
+              A clothing order management system built with <b>Blazor</b>,{" "}
+              <b>C#</b>, and <b>.NET</b>. The goal is create a website for
+              friends and family so they can order what is created by Ester and
+              an admin app that uploads her products and track orders.
             </p>
             <Link href="/projects" className="btn-blue mt-4 inline-block">
               View all projects ↗

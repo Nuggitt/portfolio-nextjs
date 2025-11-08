@@ -68,12 +68,10 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Recent Graduate */}
           <div className="card h-full transition hover:shadow-md hover:-translate-y-0.5">
-            <h3 className="card-title-md">
-              Finished Education as a Computer Science AP Graduate
-            </h3>
+            <h3 className="card-title-md">Starting Lisberg Threads Project</h3>
             <p className="text-muted">
-              Achieved hands-on experience in full-stack development. Agile
-              methodologies and collaborative projects.
+              Building a full-stack clothing order management system using
+              Blazor, C#, and .NET for friends and family.
             </p>
           </div>
 
