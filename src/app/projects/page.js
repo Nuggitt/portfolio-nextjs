@@ -90,7 +90,10 @@ export default function ProjectsPage() {
         "https://github.com/Nuggitt/HeatWaves",
         "https://github.com/Nuggitt/HtmlHeatWave",
       ],
-      live: "https://heatwaves.nuggit.dk",
+      live: [
+        "https://heatwaves.nuggit.dk",
+        "https://heatwave20260329030232-f6aqg9bgfygkfmgw.denmarkeast-01.azurewebsites.net/api/temp",
+      ],
     },
     {
       year: 2025,
@@ -193,7 +196,7 @@ export default function ProjectsPage() {
                         rel="noopener noreferrer"
                         className="btn-blue"
                       >
-                        Live Site ↗
+                        Live ↗
                       </a>
                     )}
                 </div>
@@ -270,7 +273,24 @@ export default function ProjectsPage() {
                     </a>
                   ) : null}
 
-                  {proj.live && (
+                  {Array.isArray(proj.live) ? (
+                    proj.live.map((link) => {
+                      const label = link.includes("/api/") ? "API" : "Live";
+
+                      return (
+                        <a
+                          key={link}
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-blue"
+                          aria-label={`Open ${label}`}
+                        >
+                          {label} ↗
+                        </a>
+                      );
+                    })
+                  ) : proj.live ? (
                     <a
                       href={proj.live}
                       target="_blank"
@@ -279,7 +299,7 @@ export default function ProjectsPage() {
                     >
                       Live ↗
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -357,7 +377,26 @@ export default function ProjectsPage() {
                       </td>
                       <td className="align-top">
                         <div className="flex flex-wrap gap-2">
-                          {proj.live && (
+                          {Array.isArray(proj.live) ? (
+                            proj.live.map((link) => {
+                              const label = link.includes("/api/")
+                                ? "API"
+                                : "Live";
+
+                              return (
+                                <a
+                                  key={link}
+                                  href={link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn-blue"
+                                  aria-label={`Open ${label}`}
+                                >
+                                  {label} ↗
+                                </a>
+                              );
+                            })
+                          ) : proj.live ? (
                             <a
                               href={proj.live}
                               target="_blank"
@@ -366,7 +405,7 @@ export default function ProjectsPage() {
                             >
                               Live ↗
                             </a>
-                          )}
+                          ) : null}
                         </div>
                       </td>
                     </tr>
