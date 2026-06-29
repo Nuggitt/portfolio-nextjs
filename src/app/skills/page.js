@@ -150,6 +150,33 @@ export default function SkillsPage() {
 
   const certificates = [
     {
+      id: "ms-900",
+      title: "Microsoft 365 Fundamentals (MS-900) Cert Prep by Microsoft Press",
+      issuer: "LinkedIn Learning",
+      date: "Oct 29 2025",
+      logo: "/images/ms900.png",
+      skills: ["MS365", "Microsoft 365 Fundamentals"],
+      description:
+        "Covers the fundamentals of Microsoft 365, including cloud concepts, core services, security, compliance, and pricing, to prepare for the MS-900 certification exam.",
+      link: "https://www.linkedin.com/learning/certificates/ccbf2ea733de50edc8a4b2ac4445576bbf8d617f258fc4866fffb110df93c13d?u=37487420",
+    },
+    {
+      id: "pl-900",
+      title:
+        "Microsoft Power Platform Fundamentals (PL-900) Cert Prep by Microsoft Press",
+      issuer: "LinkedIn Learning",
+      date: "Nov 12 2025",
+      logo: "/images/pl900.png",
+      skills: [
+        "Power Platform",
+        "Microsoft Power Automate",
+        "Microsoft Power Apps",
+      ],
+      description:
+        "Introduces the fundamentals of the Microsoft Power Platform, including Power Automate, Power Apps, and Power BI, to build automated workflows and applications.",
+      link: "https://www.linkedin.com/learning/certificates/1639942ba25d56e12a2b2218fcadea765d768ff8f8a154ab274db076a30491fb?u=37487420",
+    },
+    {
       id: "learning-react",
       title: "Learning React.js",
       issuer: "LinkedIn Learning",
