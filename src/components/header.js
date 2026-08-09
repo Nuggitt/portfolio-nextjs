@@ -76,7 +76,7 @@ export default function Header() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <a
-                  href="https://jofibo.com/da/s/m3WVtromskGUVgjdtTbD0w"
+                  href="/files/Philip-CV-2026-Dansk.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -84,7 +84,7 @@ export default function Header() {
                   🇩🇰 Danish
                 </a>
                 <a
-                  href="https://jofibo.com/da/s/pYWlKfDU1E2jJCNZUlGq6w"
+                  href="/files/Philip-CV-2026-English.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -186,7 +186,7 @@ export default function Header() {
               <div className="text-sm font-medium mb-1">View Resume</div>
               <div className="flex flex-col rounded-lg overflow-hidden border border-gray-200 dark:border-white/10">
                 <a
-                  href="https://jofibo.com/da/s/m3WVtromskGUVgjdtTbD0w"
+                  href="/files/Philip-CV-2026-Dansk.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-white/10"
@@ -194,7 +194,7 @@ export default function Header() {
                   🇩🇰 Danish
                 </a>
                 <a
-                  href="https://jofibo.com/da/s/pYWlKfDU1E2jJCNZUlGq6w"
+                  href="/files/Philip-CV-2026-English.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-white/10"
