@@ -3,6 +3,14 @@ import { useEffect, useRef, useState } from "react";
 
 const experiences = [
   {
+    company: "Fellowmind",
+    title: "Application Management Consultant",
+    start: "Nov 2025",
+    end: "March 2025",
+    description:
+      "Development, maintenance and operation of customer solutions using .NET/C# and Microsoft Power Platform, including Power Apps, Power Automate and SharePoint. Worked as a consultant and customer contact, handling support, troubleshooting and implementation of customer requirements.",
+  },
+  {
     company: "Beezy365",
     title: "Internship - Software Developer",
     start: "Jan 2025",
@@ -42,7 +50,7 @@ function getYear(dateStr) {
 }
 
 function useInViewOnce(
-  options = { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+  options = { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
 ) {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
