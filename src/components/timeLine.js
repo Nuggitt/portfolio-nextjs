@@ -6,7 +6,7 @@ const experiences = [
     company: "Fellowmind",
     title: "Application Management Consultant",
     start: "Nov 2025",
-    end: "March 2025",
+    end: "March 2026",
     description:
       "Development, maintenance and operation of customer solutions using .NET/C# and Microsoft Power Platform, including Power Apps, Power Automate and SharePoint. Worked as a consultant and customer contact, handling support, troubleshooting and implementation of customer requirements.",
   },
